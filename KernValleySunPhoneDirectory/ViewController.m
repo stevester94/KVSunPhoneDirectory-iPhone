@@ -34,6 +34,9 @@
     [self.view addGestureRecognizer:tap];
     
     self.cellGenerator = [[CellGenerator alloc] init:self.resultsTableView];
+    
+    [self.resultsTableView registerNib:[UINib nibWithNibName:@"ResultsViewCells" bundle:nil]
+         forCellReuseIdentifier:@"StandardCell"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,12 +63,12 @@
 //}
 //
 //
-//- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
 //    [self filterContentForSearchText:searchText scope:nil];
-//    NSLog(@"text did change!");
+    NSLog(@"text did change!");
 //    NSLog(searchText);
 //    [self.resultsTableView reloadData];
-//}
+}
 
 //Called when user clicks on the results. Via gesture recognizer
 -(void)dismissKeyboard {

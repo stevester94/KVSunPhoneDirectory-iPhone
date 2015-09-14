@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "CellGenerator.h"
 #import "ResultsEntries.h"
+#import "StandardEntryCellTableViewCell.h"
 
 @implementation CellGenerator
 - (id) init:(UITableView*)tableViewRef {
@@ -44,14 +45,16 @@
 
 - (UITableViewCell*) generateStandardCell:(StandardEntry*)standardEntry; {
     static NSString *CellIdentifier = @"StandardCell";
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    StandardEntryCellTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil)
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[StandardEntryCellTableViewCell alloc] init];
     
-    cell.textLabel.text = standardEntry.displayName;
+    cell.displayNameLabel.text = standardEntry.displayName;
     
+    NSLog(@"standard cell generated");
     return cell;
+
 }
 
 - (UITableViewCell*) generateCategoryCell:(CategoryEntry*)imageEntry; {

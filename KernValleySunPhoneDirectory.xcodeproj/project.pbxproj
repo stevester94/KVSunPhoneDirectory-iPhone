@@ -16,6 +16,8 @@
 		B0E76C011BA6B12700F90982 /* KernValleySunPhoneDirectoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E76C001BA6B12700F90982 /* KernValleySunPhoneDirectoryTests.m */; };
 		B0E76C0B1BA6C0E400F90982 /* CellGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E76C0A1BA6C0E400F90982 /* CellGenerator.m */; };
 		B0E76C101BA6CFA900F90982 /* ResultsEntries.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E76C0F1BA6CFA900F90982 /* ResultsEntries.m */; };
+		B0E76C121BA6D32800F90982 /* ResultsViewCells.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0E76C111BA6D32800F90982 /* ResultsViewCells.xib */; };
+		B0E76C151BA6D37900F90982 /* StandardEntryCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E76C141BA6D37900F90982 /* StandardEntryCellTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,9 @@
 		B0E76C0C1BA6C14600F90982 /* CellGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellGenerator.h; sourceTree = "<group>"; };
 		B0E76C0D1BA6C1E000F90982 /* ResultsEntries.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultsEntries.h; sourceTree = "<group>"; };
 		B0E76C0F1BA6CFA900F90982 /* ResultsEntries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsEntries.m; sourceTree = "<group>"; };
+		B0E76C111BA6D32800F90982 /* ResultsViewCells.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ResultsViewCells.xib; path = ../ResultsViewCells.xib; sourceTree = "<group>"; };
+		B0E76C131BA6D37900F90982 /* StandardEntryCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StandardEntryCellTableViewCell.h; path = ../StandardEntryCellTableViewCell.h; sourceTree = "<group>"; };
+		B0E76C141BA6D37900F90982 /* StandardEntryCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StandardEntryCellTableViewCell.m; path = ../StandardEntryCellTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +92,9 @@
 		B0E76BE31BA6B12700F90982 /* KernValleySunPhoneDirectory */ = {
 			isa = PBXGroup;
 			children = (
+				B0E76C111BA6D32800F90982 /* ResultsViewCells.xib */,
+				B0E76C131BA6D37900F90982 /* StandardEntryCellTableViewCell.h */,
+				B0E76C141BA6D37900F90982 /* StandardEntryCellTableViewCell.m */,
 				B0E76BE81BA6B12700F90982 /* AppDelegate.h */,
 				B0E76BE91BA6B12700F90982 /* AppDelegate.m */,
 				B0E76BEB1BA6B12700F90982 /* ViewController.h */,
@@ -210,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0E76BF01BA6B12700F90982 /* Main.storyboard in Resources */,
+				B0E76C121BA6D32800F90982 /* ResultsViewCells.xib in Resources */,
 				B0E76BF51BA6B12700F90982 /* LaunchScreen.xib in Resources */,
 				B0E76BF21BA6B12700F90982 /* Images.xcassets in Resources */,
 			);
@@ -229,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0E76C151BA6D37900F90982 /* StandardEntryCellTableViewCell.m in Sources */,
 				B0E76BED1BA6B12700F90982 /* ViewController.m in Sources */,
 				B0E76C0B1BA6C0E400F90982 /* CellGenerator.m in Sources */,
 				B0E76C101BA6CFA900F90982 /* ResultsEntries.m in Sources */,
