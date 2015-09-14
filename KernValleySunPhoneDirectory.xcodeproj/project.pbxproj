@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B0E76BE71BA6B12700F90982 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E76BE61BA6B12700F90982 /* main.m */; };
+		B0E76BEA1BA6B12700F90982 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E76BE91BA6B12700F90982 /* AppDelegate.m */; };
+		B0E76BED1BA6B12700F90982 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E76BEC1BA6B12700F90982 /* ViewController.m */; };
+		B0E76BF01BA6B12700F90982 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E76BEE1BA6B12700F90982 /* Main.storyboard */; };
+		B0E76BF21BA6B12700F90982 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0E76BF11BA6B12700F90982 /* Images.xcassets */; };
+		B0E76BF51BA6B12700F90982 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0E76BF31BA6B12700F90982 /* LaunchScreen.xib */; };
+		B0E76C011BA6B12700F90982 /* KernValleySunPhoneDirectoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E76C001BA6B12700F90982 /* KernValleySunPhoneDirectoryTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B0E76BFB1BA6B12700F90982 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0E76BD91BA6B12700F90982 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B0E76BE01BA6B12700F90982;
+			remoteInfo = KernValleySunPhoneDirectory;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B0E76BE11BA6B12700F90982 /* KernValleySunPhoneDirectory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KernValleySunPhoneDirectory.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0E76BE51BA6B12700F90982 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0E76BE61BA6B12700F90982 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B0E76BE81BA6B12700F90982 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B0E76BE91BA6B12700F90982 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B0E76BEB1BA6B12700F90982 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B0E76BEC1BA6B12700F90982 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B0E76BEF1BA6B12700F90982 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B0E76BF11BA6B12700F90982 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B0E76BF41BA6B12700F90982 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		B0E76BFA1BA6B12700F90982 /* KernValleySunPhoneDirectoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KernValleySunPhoneDirectoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0E76BFF1BA6B12700F90982 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0E76C001BA6B12700F90982 /* KernValleySunPhoneDirectoryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KernValleySunPhoneDirectoryTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B0E76BDE1BA6B12700F90982 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0E76BF71BA6B12700F90982 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B0E76BD81BA6B12700F90982 = {
+			isa = PBXGroup;
+			children = (
+				B0E76BE31BA6B12700F90982 /* KernValleySunPhoneDirectory */,
+				B0E76BFD1BA6B12700F90982 /* KernValleySunPhoneDirectoryTests */,
+				B0E76BE21BA6B12700F90982 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B0E76BE21BA6B12700F90982 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B0E76BE11BA6B12700F90982 /* KernValleySunPhoneDirectory.app */,
+				B0E76BFA1BA6B12700F90982 /* KernValleySunPhoneDirectoryTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B0E76BE31BA6B12700F90982 /* KernValleySunPhoneDirectory */ = {
+			isa = PBXGroup;
+			children = (
+				B0E76BE81BA6B12700F90982 /* AppDelegate.h */,
+				B0E76BE91BA6B12700F90982 /* AppDelegate.m */,
+				B0E76BEB1BA6B12700F90982 /* ViewController.h */,
+				B0E76BEC1BA6B12700F90982 /* ViewController.m */,
+				B0E76BEE1BA6B12700F90982 /* Main.storyboard */,
+				B0E76BF11BA6B12700F90982 /* Images.xcassets */,
+				B0E76BF31BA6B12700F90982 /* LaunchScreen.xib */,
+				B0E76BE41BA6B12700F90982 /* Supporting Files */,
+			);
+			path = KernValleySunPhoneDirectory;
+			sourceTree = "<group>";
+		};
+		B0E76BE41BA6B12700F90982 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B0E76BE51BA6B12700F90982 /* Info.plist */,
+				B0E76BE61BA6B12700F90982 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B0E76BFD1BA6B12700F90982 /* KernValleySunPhoneDirectoryTests */ = {
+			isa = PBXGroup;
+			children = (
+				B0E76C001BA6B12700F90982 /* KernValleySunPhoneDirectoryTests.m */,
+				B0E76BFE1BA6B12700F90982 /* Supporting Files */,
+			);
+			path = KernValleySunPhoneDirectoryTests;
+			sourceTree = "<group>";
+		};
+		B0E76BFE1BA6B12700F90982 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B0E76BFF1BA6B12700F90982 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B0E76BE01BA6B12700F90982 /* KernValleySunPhoneDirectory */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0E76C041BA6B12700F90982 /* Build configuration list for PBXNativeTarget "KernValleySunPhoneDirectory" */;
+			buildPhases = (
+				B0E76BDD1BA6B12700F90982 /* Sources */,
+				B0E76BDE1BA6B12700F90982 /* Frameworks */,
+				B0E76BDF1BA6B12700F90982 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KernValleySunPhoneDirectory;
+			productName = KernValleySunPhoneDirectory;
+			productReference = B0E76BE11BA6B12700F90982 /* KernValleySunPhoneDirectory.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B0E76BF91BA6B12700F90982 /* KernValleySunPhoneDirectoryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0E76C071BA6B12700F90982 /* Build configuration list for PBXNativeTarget "KernValleySunPhoneDirectoryTests" */;
+			buildPhases = (
+				B0E76BF61BA6B12700F90982 /* Sources */,
+				B0E76BF71BA6B12700F90982 /* Frameworks */,
+				B0E76BF81BA6B12700F90982 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B0E76BFC1BA6B12700F90982 /* PBXTargetDependency */,
+			);
+			name = KernValleySunPhoneDirectoryTests;
+			productName = KernValleySunPhoneDirectoryTests;
+			productReference = B0E76BFA1BA6B12700F90982 /* KernValleySunPhoneDirectoryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B0E76BD91BA6B12700F90982 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Steven Mackey";
+				TargetAttributes = {
+					B0E76BE01BA6B12700F90982 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					B0E76BF91BA6B12700F90982 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = B0E76BE01BA6B12700F90982;
+					};
+				};
+			};
+			buildConfigurationList = B0E76BDC1BA6B12700F90982 /* Build configuration list for PBXProject "KernValleySunPhoneDirectory" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B0E76BD81BA6B12700F90982;
+			productRefGroup = B0E76BE21BA6B12700F90982 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B0E76BE01BA6B12700F90982 /* KernValleySunPhoneDirectory */,
+				B0E76BF91BA6B12700F90982 /* KernValleySunPhoneDirectoryTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B0E76BDF1BA6B12700F90982 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0E76BF01BA6B12700F90982 /* Main.storyboard in Resources */,
+				B0E76BF51BA6B12700F90982 /* LaunchScreen.xib in Resources */,
+				B0E76BF21BA6B12700F90982 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0E76BF81BA6B12700F90982 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B0E76BDD1BA6B12700F90982 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0E76BED1BA6B12700F90982 /* ViewController.m in Sources */,
+				B0E76BEA1BA6B12700F90982 /* AppDelegate.m in Sources */,
+				B0E76BE71BA6B12700F90982 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0E76BF61BA6B12700F90982 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0E76C011BA6B12700F90982 /* KernValleySunPhoneDirectoryTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B0E76BFC1BA6B12700F90982 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B0E76BE01BA6B12700F90982 /* KernValleySunPhoneDirectory */;
+			targetProxy = B0E76BFB1BA6B12700F90982 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B0E76BEE1BA6B12700F90982 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0E76BEF1BA6B12700F90982 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B0E76BF31BA6B12700F90982 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0E76BF41BA6B12700F90982 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B0E76C021BA6B12700F90982 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B0E76C031BA6B12700F90982 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B0E76C051BA6B12700F90982 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KernValleySunPhoneDirectory/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B0E76C061BA6B12700F90982 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KernValleySunPhoneDirectory/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B0E76C081BA6B12700F90982 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KernValleySunPhoneDirectoryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KernValleySunPhoneDirectory.app/KernValleySunPhoneDirectory";
+			};
+			name = Debug;
+		};
+		B0E76C091BA6B12700F90982 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KernValleySunPhoneDirectoryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KernValleySunPhoneDirectory.app/KernValleySunPhoneDirectory";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B0E76BDC1BA6B12700F90982 /* Build configuration list for PBXProject "KernValleySunPhoneDirectory" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0E76C021BA6B12700F90982 /* Debug */,
+				B0E76C031BA6B12700F90982 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0E76C041BA6B12700F90982 /* Build configuration list for PBXNativeTarget "KernValleySunPhoneDirectory" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0E76C051BA6B12700F90982 /* Debug */,
+				B0E76C061BA6B12700F90982 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B0E76C071BA6B12700F90982 /* Build configuration list for PBXNativeTarget "KernValleySunPhoneDirectoryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0E76C081BA6B12700F90982 /* Debug */,
+				B0E76C091BA6B12700F90982 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B0E76BD91BA6B12700F90982 /* Project object */;
+}
