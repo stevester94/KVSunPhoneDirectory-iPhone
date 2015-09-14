@@ -14,6 +14,8 @@
 		B0E76BF21BA6B12700F90982 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0E76BF11BA6B12700F90982 /* Images.xcassets */; };
 		B0E76BF51BA6B12700F90982 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0E76BF31BA6B12700F90982 /* LaunchScreen.xib */; };
 		B0E76C011BA6B12700F90982 /* KernValleySunPhoneDirectoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E76C001BA6B12700F90982 /* KernValleySunPhoneDirectoryTests.m */; };
+		B0E76C0B1BA6C0E400F90982 /* CellGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E76C0A1BA6C0E400F90982 /* CellGenerator.m */; };
+		B0E76C101BA6CFA900F90982 /* ResultsEntries.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E76C0F1BA6CFA900F90982 /* ResultsEntries.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		B0E76BFA1BA6B12700F90982 /* KernValleySunPhoneDirectoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KernValleySunPhoneDirectoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0E76BFF1BA6B12700F90982 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0E76C001BA6B12700F90982 /* KernValleySunPhoneDirectoryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KernValleySunPhoneDirectoryTests.m; sourceTree = "<group>"; };
+		B0E76C0A1BA6C0E400F90982 /* CellGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellGenerator.m; sourceTree = "<group>"; };
+		B0E76C0C1BA6C14600F90982 /* CellGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellGenerator.h; sourceTree = "<group>"; };
+		B0E76C0D1BA6C1E000F90982 /* ResultsEntries.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultsEntries.h; sourceTree = "<group>"; };
+		B0E76C0F1BA6CFA900F90982 /* ResultsEntries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsEntries.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,10 @@
 				B0E76BE91BA6B12700F90982 /* AppDelegate.m */,
 				B0E76BEB1BA6B12700F90982 /* ViewController.h */,
 				B0E76BEC1BA6B12700F90982 /* ViewController.m */,
+				B0E76C0C1BA6C14600F90982 /* CellGenerator.h */,
+				B0E76C0A1BA6C0E400F90982 /* CellGenerator.m */,
+				B0E76C0D1BA6C1E000F90982 /* ResultsEntries.h */,
+				B0E76C0F1BA6CFA900F90982 /* ResultsEntries.m */,
 				B0E76BEE1BA6B12700F90982 /* Main.storyboard */,
 				B0E76BF11BA6B12700F90982 /* Images.xcassets */,
 				B0E76BF31BA6B12700F90982 /* LaunchScreen.xib */,
@@ -220,6 +230,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0E76BED1BA6B12700F90982 /* ViewController.m in Sources */,
+				B0E76C0B1BA6C0E400F90982 /* CellGenerator.m in Sources */,
+				B0E76C101BA6CFA900F90982 /* ResultsEntries.m in Sources */,
 				B0E76BEA1BA6B12700F90982 /* AppDelegate.m in Sources */,
 				B0E76BE71BA6B12700F90982 /* main.m in Sources */,
 			);
