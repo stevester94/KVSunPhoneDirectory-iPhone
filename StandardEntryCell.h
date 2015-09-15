@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StandardEntryCellTableViewCell : UITableViewCell
+@interface StandardEntryCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *displayNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *allLinesLabel;
 
 @end

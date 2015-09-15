@@ -11,7 +11,6 @@
 
 @interface ViewController ()
 @property (strong, nonatomic) NSArray* resultsArray;
-@property (strong, nonatomic) NSArray* possibleArray;
 @property (strong, nonatomic) CellGenerator* cellGenerator;
 @end
 
@@ -20,11 +19,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //Load up resultsArray with dummies
     StandardEntry* testEntry;
     testEntry = [StandardEntry alloc];
     testEntry.displayName = @"Holy shit did that just work??";
     testEntry.allLines = @"These are all of the lines for the test entry!";
-    self.resultsArray = [[NSArray alloc] initWithObjects:testEntry, nil];
+    testEntry.entryType = standardEntry;
+    
+    StandardEntry* testEntry2;
+    testEntry2 = [StandardEntry alloc];
+    testEntry2.displayName = @"TEST 2";
+    testEntry2.allLines = @"TEST2 TEXT";
+    testEntry2.entryType = standardEntry;
+    
+    
+
+    self.resultsArray = [[NSArray alloc] initWithObjects:testEntry, testEntry2, nil];
     
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
@@ -35,7 +45,8 @@
     
     self.cellGenerator = [[CellGenerator alloc] init:self.resultsTableView];
     
-    [self.resultsTableView registerNib:[UINib nibWithNibName:@"ResultsViewCells" bundle:nil]
+    //No idea why you have to do this
+    [self.resultsTableView registerNib:[UINib nibWithNibName:@"StandardEntryCell" bundle:nil]
          forCellReuseIdentifier:@"StandardCell"];
 }
 
@@ -53,6 +64,10 @@
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath {
     
     return [self.cellGenerator generateCell:[self.resultsArray objectAtIndex:indexPath.row]];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [self.cellGenerator calculateCellHeight:[self.resultsArray objectAtIndex:indexPath.row]];
 }
 
 

@@ -8,8 +8,13 @@
 #import <UIKit/UIKit.h>
 #import "ResultsEntries.h"
 
+#define STANDARD_CELL_HEIGHT 76.0
+#define CATEGORY_CELL_HEIGHT 76.0
+
+
 @interface CellGenerator : NSObject
 - (id) init:(UITableView*)tableViewRef;
+- (CGFloat) calculateCellHeight:(ResultsEntry*)entry;
 - (UITableViewCell*) generateCell:(NSObject*)entry;
 
 @property (weak, nonatomic) UITableView* tableView;

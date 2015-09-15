@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Steven Mackey. All rights reserved.
 //
 
-#import "StandardEntryCellTableViewCell.h"
+#import "StandardEntryCell.h"
 
-@implementation StandardEntryCellTableViewCell
+@implementation StandardEntryCell
 
 - (void)awakeFromNib {
     // Initialization code
