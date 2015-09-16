@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "DBManager.h"
+#import "FMDatabase.h"
 
 @interface ViewController ()
 @property (strong, nonatomic) NSArray* resultsArray;
@@ -26,7 +28,25 @@
                                    action:@selector(dismissKeyboard)];
     tap.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tap];
+    
+    
+    //DB SHIT
+    DBManager* db;
+    db = [DBManager alloc];
+//    [db initializeDB];
+//    [db saveData:nil name:@"Steven" note:@"SOM IT"];
+//    [db saveData:nil name:@"Abs" note:@"SOM IT2"];
+//    
+//    [db findContact:nil name:@"Steven"];
+//    [db findContact:nil name:@"Abs"];
+//    [db findContact:nil name:@"incorrect"];
+    [db getAllData];
+
+    
+    
+    
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

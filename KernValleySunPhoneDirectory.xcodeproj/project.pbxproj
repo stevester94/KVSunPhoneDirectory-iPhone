@@ -14,6 +14,14 @@
 		B0E76BF21BA6B12700F90982 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0E76BF11BA6B12700F90982 /* Images.xcassets */; };
 		B0E76BF51BA6B12700F90982 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0E76BF31BA6B12700F90982 /* LaunchScreen.xib */; };
 		B0E76C011BA6B12700F90982 /* KernValleySunPhoneDirectoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E76C001BA6B12700F90982 /* KernValleySunPhoneDirectoryTests.m */; };
+		DC1935ED1BA9ECBB00F8043E /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1935EC1BA9ECBB00F8043E /* DBManager.m */; };
+		DC1935F01BAA085700F8043E /* entries.db in Resources */ = {isa = PBXBuildFile; fileRef = DC1935EF1BAA085700F8043E /* entries.db */; };
+		DC1935FC1BAA130E00F8043E /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1935F21BAA130E00F8043E /* FMDatabase.m */; };
+		DC1935FD1BAA130E00F8043E /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1935F41BAA130E00F8043E /* FMDatabaseAdditions.m */; };
+		DC1935FE1BAA130E00F8043E /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1935F61BAA130E00F8043E /* FMDatabasePool.m */; };
+		DC1935FF1BAA130E00F8043E /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1935F81BAA130E00F8043E /* FMDatabaseQueue.m */; };
+		DC1936001BAA130E00F8043E /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1935FB1BAA130E00F8043E /* FMResultSet.m */; };
+		DCF342141BA8E18600FEDAD1 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF342131BA8E18600FEDAD1 /* libsqlite3.0.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +48,21 @@
 		B0E76BFA1BA6B12700F90982 /* KernValleySunPhoneDirectoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KernValleySunPhoneDirectoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0E76BFF1BA6B12700F90982 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0E76C001BA6B12700F90982 /* KernValleySunPhoneDirectoryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KernValleySunPhoneDirectoryTests.m; sourceTree = "<group>"; };
+		DC1935EC1BA9ECBB00F8043E /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		DC1935EF1BAA085700F8043E /* entries.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = entries.db; sourceTree = "<group>"; };
+		DC1935F11BAA130E00F8043E /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		DC1935F21BAA130E00F8043E /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		DC1935F31BAA130E00F8043E /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		DC1935F41BAA130E00F8043E /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		DC1935F51BAA130E00F8043E /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		DC1935F61BAA130E00F8043E /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		DC1935F71BAA130E00F8043E /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		DC1935F81BAA130E00F8043E /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		DC1935F91BAA130E00F8043E /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		DC1935FA1BAA130E00F8043E /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		DC1935FB1BAA130E00F8043E /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		DCF342131BA8E18600FEDAD1 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		DCF3421B1BA8E23900FEDAD1 /* DBManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCF342141BA8E18600FEDAD1 /* libsqlite3.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +87,7 @@
 		B0E76BD81BA6B12700F90982 = {
 			isa = PBXGroup;
 			children = (
+				DCF342131BA8E18600FEDAD1 /* libsqlite3.0.dylib */,
 				B0E76BE31BA6B12700F90982 /* KernValleySunPhoneDirectory */,
 				B0E76BFD1BA6B12700F90982 /* KernValleySunPhoneDirectoryTests */,
 				B0E76BE21BA6B12700F90982 /* Products */,
@@ -81,6 +106,20 @@
 		B0E76BE31BA6B12700F90982 /* KernValleySunPhoneDirectory */ = {
 			isa = PBXGroup;
 			children = (
+				DC1935EF1BAA085700F8043E /* entries.db */,
+				DC1935F11BAA130E00F8043E /* FMDatabase.h */,
+				DC1935F21BAA130E00F8043E /* FMDatabase.m */,
+				DC1935F31BAA130E00F8043E /* FMDatabaseAdditions.h */,
+				DC1935F41BAA130E00F8043E /* FMDatabaseAdditions.m */,
+				DC1935F51BAA130E00F8043E /* FMDatabasePool.h */,
+				DC1935F61BAA130E00F8043E /* FMDatabasePool.m */,
+				DC1935F71BAA130E00F8043E /* FMDatabaseQueue.h */,
+				DC1935F81BAA130E00F8043E /* FMDatabaseQueue.m */,
+				DC1935F91BAA130E00F8043E /* FMDB.h */,
+				DC1935FA1BAA130E00F8043E /* FMResultSet.h */,
+				DC1935FB1BAA130E00F8043E /* FMResultSet.m */,
+				DC1935EC1BA9ECBB00F8043E /* DBManager.m */,
+				DCF3421B1BA8E23900FEDAD1 /* DBManager.h */,
 				B0E76BE81BA6B12700F90982 /* AppDelegate.h */,
 				B0E76BE91BA6B12700F90982 /* AppDelegate.m */,
 				B0E76BEB1BA6B12700F90982 /* ViewController.h */,
@@ -199,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC1935F01BAA085700F8043E /* entries.db in Resources */,
 				B0E76BF01BA6B12700F90982 /* Main.storyboard in Resources */,
 				B0E76BF51BA6B12700F90982 /* LaunchScreen.xib in Resources */,
 				B0E76BF21BA6B12700F90982 /* Images.xcassets in Resources */,
@@ -220,8 +260,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0E76BED1BA6B12700F90982 /* ViewController.m in Sources */,
+				DC1935FF1BAA130E00F8043E /* FMDatabaseQueue.m in Sources */,
 				B0E76BEA1BA6B12700F90982 /* AppDelegate.m in Sources */,
 				B0E76BE71BA6B12700F90982 /* main.m in Sources */,
+				DC1935FC1BAA130E00F8043E /* FMDatabase.m in Sources */,
+				DC1935FE1BAA130E00F8043E /* FMDatabasePool.m in Sources */,
+				DC1936001BAA130E00F8043E /* FMResultSet.m in Sources */,
+				DC1935ED1BA9ECBB00F8043E /* DBManager.m in Sources */,
+				DC1935FD1BAA130E00F8043E /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +464,7 @@
 				B0E76C061BA6B12700F90982 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B0E76C071BA6B12700F90982 /* Build configuration list for PBXNativeTarget "KernValleySunPhoneDirectoryTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +473,7 @@
 				B0E76C091BA6B12700F90982 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
