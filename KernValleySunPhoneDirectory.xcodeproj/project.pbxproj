@@ -12,7 +12,6 @@
 		B0E76BED1BA6B12700F90982 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E76BEC1BA6B12700F90982 /* ViewController.m */; };
 		B0E76BF01BA6B12700F90982 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E76BEE1BA6B12700F90982 /* Main.storyboard */; };
 		B0E76BF21BA6B12700F90982 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0E76BF11BA6B12700F90982 /* Images.xcassets */; };
-		B0E76BF51BA6B12700F90982 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0E76BF31BA6B12700F90982 /* LaunchScreen.xib */; };
 		B0E76C011BA6B12700F90982 /* KernValleySunPhoneDirectoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E76C001BA6B12700F90982 /* KernValleySunPhoneDirectoryTests.m */; };
 		DC1935ED1BA9ECBB00F8043E /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1935EC1BA9ECBB00F8043E /* DBManager.m */; };
 		DC1935F01BAA085700F8043E /* entries.db in Resources */ = {isa = PBXBuildFile; fileRef = DC1935EF1BAA085700F8043E /* entries.db */; };
@@ -39,7 +38,6 @@
 		B0E76BEC1BA6B12700F90982 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B0E76BEF1BA6B12700F90982 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B0E76BF11BA6B12700F90982 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		B0E76BF41BA6B12700F90982 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B0E76BFA1BA6B12700F90982 /* KernValleySunPhoneDirectoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KernValleySunPhoneDirectoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0E76BFF1BA6B12700F90982 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0E76C001BA6B12700F90982 /* KernValleySunPhoneDirectoryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KernValleySunPhoneDirectoryTests.m; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 				B0E76BEC1BA6B12700F90982 /* ViewController.m */,
 				B0E76BEE1BA6B12700F90982 /* Main.storyboard */,
 				B0E76BF11BA6B12700F90982 /* Images.xcassets */,
-				B0E76BF31BA6B12700F90982 /* LaunchScreen.xib */,
 				B0E76BE41BA6B12700F90982 /* Supporting Files */,
 			);
 			path = KernValleySunPhoneDirectory;
@@ -213,7 +210,6 @@
 			files = (
 				DC1935F01BAA085700F8043E /* entries.db in Resources */,
 				B0E76BF01BA6B12700F90982 /* Main.storyboard in Resources */,
-				B0E76BF51BA6B12700F90982 /* LaunchScreen.xib in Resources */,
 				B0E76BF21BA6B12700F90982 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,14 +260,6 @@
 				B0E76BEF1BA6B12700F90982 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B0E76BF31BA6B12700F90982 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B0E76BF41BA6B12700F90982 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -363,6 +351,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				INFOPLIST_FILE = KernValleySunPhoneDirectory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -373,6 +362,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				INFOPLIST_FILE = KernValleySunPhoneDirectory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
