@@ -7,7 +7,6 @@
 //
 
 #import "DBManager.h"
-#import "FMDatabase.h"
 
 @interface DBManager ()
 
@@ -24,6 +23,7 @@
     return self;
 }
 
+//Need to rewrite this to support entries.db
 - (void)initializeDB {
     NSString *docsDir;
     NSArray *dirPaths;
@@ -123,45 +123,63 @@
 }
 
 
-- (void)getAllData {
-    // Getting the database path.
-    NSArray  *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *docsPath = [paths objectAtIndex:0];
-    NSString *dbPath = [docsPath stringByAppendingPathComponent:@"entries.db"];
+- (void) testEntriesDB {
+    const char *dbpath = [_databasePath UTF8String];
+    sqlite3_stmt    *statement;
     
-
-    NSString *sqlSelectQuery = @"SELECT * FROM Entries";
-    
-    // Query result
-//    FMResultSet *resultsWithNameLocation = [database executeQuery:sqlSelectQuery];
-//    while([resultsWithNameLocation next]) {
-//        NSString *strID = [NSString stringWithFormat:@"%d",[resultsWithNameLocation intForColumn:@"displayName"]];
-//        
-//        // loading your data into the array, dictionaries.
-//        NSLog(@"ID = %@",strID);
-//    }
-//    [database close];
+    if (sqlite3_open(dbpath, &_contactDB) == SQLITE_OK)
+    {
+        NSString *querySQL = @"SELECT * FROM categories";
+        
+        const char *query_stmt = [querySQL UTF8String];
+        
+        if (sqlite3_prepare_v2(_contactDB, query_stmt, -1, &statement, NULL) == SQLITE_OK) {
+            while (sqlite3_step(statement) == SQLITE_ROW) {
+                const unsigned char* rowData = sqlite3_column_text(statement, 1);
+                
+                printf("Category: %s\n", rowData);
+            }
+            sqlite3_finalize(statement);
+        } else
+            NSLog(@"shits all fucked");
+        sqlite3_close(_contactDB);
+    }
 }
 - (void)createEditableCopyOfDatabaseIfNeeded {
-    NSLog(@"Checking for database file");
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSError *error;
-    NSString *dbPath = [self getDBPath];
-    NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"entries.db"];
-    BOOL success = [fileManager fileExistsAtPath:dbPath];
-    
-    NSLog(@"If needed, bundled default DB is at: %@",defaultDBPath);
-    
-    if(!success) {
-        NSLog(@"Database didn't exist... Copying default from resource dir");
-        success = [fileManager copyItemAtPath:defaultDBPath toPath:dbPath error:&error];
-        
-        if (!success)
-            NSAssert1(0, @"Failed to create writable database file with message '%@'.", [error localizedDescription]);
-    } else {
-        NSLog(@"Database must have existed at the following path: %@", dbPath);
+    NSFileManager* fileManager = [[NSFileManager alloc] init];
+    NSError*__autoreleasing* error;
+   
+    //Check for file in bundle
+    NSLog(@"Checking for database file in bundle");
+    NSString *pathToBundleDB = [[NSBundle mainBundle]pathForResource:DATABASE_NAME ofType:@"db"];
+
+    if (!pathToBundleDB) {
+        NSLog(@"Unable to find file in bundle");
+        return;
     }
-    NSLog(@"Done checking for db file");
+    
+    //Get document path
+    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    
+    //Get absolute path to DB in document directory
+    NSMutableString* pathToDocumentsDB  = [NSMutableString stringWithString:documentsDirectory];
+    [pathToDocumentsDB appendString:@"/entries.db"];
+    NSLog(pathToDocumentsDB);
+    
+    //Delete db in documents if present
+    if ([fileManager fileExistsAtPath:pathToDocumentsDB] == YES) {
+        [fileManager removeItemAtPath:pathToDocumentsDB error:error];
+        NSLog(@"DB in documents deleted");
+    }
+    
+    //Copy db from bundle to documents
+    bool copySuccess = [fileManager copyItemAtPath:pathToBundleDB toPath:pathToDocumentsDB error:error];
+    if(copySuccess & [fileManager fileExistsAtPath:pathToDocumentsDB])
+        NSLog(@"Copy was succesfull");
+    else
+        NSLog(@"Copy unsuccesfull");
+    
+    self.databasePath = pathToDocumentsDB;
 }
 
 

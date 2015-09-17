@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import "DBManager.h"
-#import "FMDatabase.h"
 
 @interface ViewController ()
 @property (strong, nonatomic) NSArray* resultsArray;
@@ -40,7 +39,8 @@
 //    [db findContact:nil name:@"Steven"];
 //    [db findContact:nil name:@"Abs"];
 //    [db findContact:nil name:@"incorrect"];
-    [db getAllData];
+    [db createEditableCopyOfDatabaseIfNeeded];
+    [db testEntriesDB];
 
     
     
