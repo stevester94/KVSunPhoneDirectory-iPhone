@@ -14,7 +14,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // Function called to create a copy of the database if needed.
-    [self createCopyOfDatabaseIfNeeded];
+    sleep(1.5);
     
     return YES;
 }

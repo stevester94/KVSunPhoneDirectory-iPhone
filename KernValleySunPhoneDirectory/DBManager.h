@@ -15,13 +15,17 @@
 
 @interface DBManager : NSObject
 
+
 - (void) initializeDB;
-- (void) createEditableCopyOfDatabaseIfNeeded;
 - (void)saveData:(id)sender name:(NSString*)name note:(NSString*)note;
 - (void)findContact:(id)sender name:(NSString*)name;
-- (void) createAndCheckDatabase; 
-- (void) getAllData;
-- (void) testEntriesDB;
+- (void)createAndCheckDatabase;
+- (void)getAllData;
+- (void) searchByName:(NSString*)name;
+- (void)searchByNumber:(NSString*)number;
+- (void)searchByCategory:(NSString*)category;
+- (void)testEntriesDB;
+
 
 @property (strong, nonatomic) NSString *databasePath;
 @property (nonatomic) sqlite3 *contactDB;

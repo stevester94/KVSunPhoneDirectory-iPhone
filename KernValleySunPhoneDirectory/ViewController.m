@@ -39,9 +39,10 @@
 //    [db findContact:nil name:@"Steven"];
 //    [db findContact:nil name:@"Abs"];
 //    [db findContact:nil name:@"incorrect"];
-    [db createEditableCopyOfDatabaseIfNeeded];
-    [db testEntriesDB];
-
+    [db initializeDB];
+    [db searchByName:@"Monte"];
+    [db searchByNumber:@"379-357"];
+    [db searchByCategory:@"HARDWARE"];
     
     
     

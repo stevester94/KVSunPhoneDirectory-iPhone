@@ -16,6 +16,12 @@
 //CREATE TABLE Categories(displayName TEXT, category TEXT, FOREIGN KEY(displayName) REFERENCES entries(displayName));
 //CREATE TABLE CategoriesList(Category TEXT PRIMARY KEY);
 
+//Need:
+//  search by name
+//  search by category
+//  search by number
+
+//Need to return as ResultsArray
 
 @implementation DBManager
 - (id) init {
@@ -23,45 +29,7 @@
     return self;
 }
 
-//Need to rewrite this to support entries.db
-- (void)initializeDB {
-    NSString *docsDir;
-    NSArray *dirPaths;
-    
-    // Get the documents directory
-    dirPaths = NSSearchPathForDirectoriesInDomains(
-                                                   NSDocumentDirectory, NSUserDomainMask, YES);
-    
-    docsDir = dirPaths[0];
-    
-    // Build the path to the database file
-    _databasePath = [[NSString alloc]
-                     initWithString: [docsDir stringByAppendingPathComponent:
-                                      DATABASE_NAME]];
-    
-    NSFileManager *filemgr = [NSFileManager defaultManager];
-    
-    //Is going to create an empty database if not found, need to change!!
-    if ([filemgr fileExistsAtPath: _databasePath ] == NO)
-    {
-        const char *dbpath = [_databasePath UTF8String];
-        
-        if (sqlite3_open(dbpath, &_contactDB) == SQLITE_OK)
-        {
-            char *errMsg;
-            const char *sql_stmt =
-            "CREATE TABLE IF NOT EXISTS CONTACTS (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, NOTE TEXT)";
-            
-            if (sqlite3_exec(_contactDB, sql_stmt, NULL, NULL, &errMsg) != SQLITE_OK)
-            {
-                NSLog(@"Failed to create table");
-            }
-            sqlite3_close(_contactDB);
-        } else {
-            NSLog(@"Failed to open/create database");
-        }
-    }
-}
+
 
 - (void) saveData:(id)sender name:(NSString*) name note:(NSString *)note
 {
@@ -88,64 +56,71 @@
         sqlite3_close(_contactDB);
     }
 }
+//schema: Entries(displayName TEXT PRIMARY KEY, associatedNumbers TEXT, allLines TEXT, bannerPath TEXT, hasMultipleNumbers BOOLEAN, hasMultipleLines BOOLEAN);
+- (void) searchByName:(NSString*)name {
+    NSString* baseQuery = @"select * from Entries where displayName like ";
+    NSString* query = [baseQuery stringByAppendingString:@"'%"];
+    query = [query stringByAppendingString:name];
+    query = [query stringByAppendingString:@"%'"];
 
-- (void) findContact:(id)sender name:(NSString*)name
-{
-    const char *dbpath = [_databasePath UTF8String];
-    sqlite3_stmt    *statement;
     
-    if (sqlite3_open(dbpath, &_contactDB) == SQLITE_OK)
-    {
-        NSString *querySQL = [NSString stringWithFormat:
-                              @"SELECT * FROM contacts WHERE name=\"%@\"",
-                              name];
-        
-        const char *query_stmt = [querySQL UTF8String];
-        
-        if (sqlite3_prepare_v2(_contactDB, query_stmt, -1, &statement, NULL) == SQLITE_OK) {
-            unsigned char* cols = sqlite3_column_name(statement, 2);
-            
-            
-            if (sqlite3_step(statement) == SQLITE_ROW) {
-                const unsigned char* note = sqlite3_column_text(statement, 2);
-                
-                NSLog(@"Match found");
-                printf("Column name: %s\n", cols);
-                printf("Vlaue: %s\n", note);
-            } else {
-                NSLog(@"Match not found");
-            }
-            sqlite3_finalize(statement);
-        } else
-            NSLog(@"shits all fucked");
-        sqlite3_close(_contactDB);
-    }
+    sqlite3_stmt* statement = [self executeQuery:query];
+    [self dumpAllRowsFromStatement:statement];
 }
 
+//schema: Categories(displayName TEXT, category TEXT, FOREIGN KEY(displayName) REFERENCES entries(displayName));
+- (void) searchByCategory:(NSString *)category {
+    NSString* baseQuery = @"SELECT Entries.* from Entries, Categories where ";
+    baseQuery = [baseQuery stringByAppendingString:@"Entries.displayName = Categories.displayName and Categories.category = "];
+    NSString* query = [baseQuery stringByAppendingString:@"'"];
+    query = [query stringByAppendingString:category];
+    query = [query stringByAppendingString:@"'"];
+    
+    sqlite3_stmt* statement = [self executeQuery:query];
+    [self dumpAllRowsFromStatement:statement];
+    
+}
+
+- (void) searchByNumber:(NSString *)number {
+    NSString* baseQuery = @"select * from Entries where associatedNumbers like ";
+    NSString* query = [baseQuery stringByAppendingString:@"'%"];
+    query = [query stringByAppendingString:number];
+    query = [query stringByAppendingString:@"%'"];
+    
+    sqlite3_stmt* statement = [self executeQuery:query];
+    [self dumpAllRowsFromStatement:statement];
+}
+
+- (void) dumpAllRowsFromStatement:(sqlite3_stmt*)statement {
+    
+    while(sqlite3_step(statement) == SQLITE_ROW) {
+        NSString* displayName = [NSString stringWithUTF8String:sqlite3_column_text(statement, 0)];
+        NSString* associatedNumbers = [NSString stringWithUTF8String:sqlite3_column_text(statement, 1)];
+        NSString* allLines = [NSString stringWithUTF8String:sqlite3_column_text(statement, 2)];
+        NSString* bannerPath = [NSString stringWithUTF8String:sqlite3_column_text(statement, 3)];
+        NSString* hasMultipleNumbers = [NSString stringWithUTF8String:sqlite3_column_text(statement, 4)];
+        NSString* hasMultipleLines = [NSString stringWithUTF8String:sqlite3_column_text(statement, 5)];
+        
+        NSLog(displayName);
+    }
+    [self finalizeAndClose:statement];
+}
 
 - (void) testEntriesDB {
-    const char *dbpath = [_databasePath UTF8String];
-    sqlite3_stmt    *statement;
+    NSString *querySQL = @"SELECT * FROM categories";
+    sqlite3_stmt* queryReturn = [self executeQuery:querySQL];
     
-    if (sqlite3_open(dbpath, &_contactDB) == SQLITE_OK)
-    {
-        NSString *querySQL = @"SELECT * FROM categories";
-        
-        const char *query_stmt = [querySQL UTF8String];
-        
-        if (sqlite3_prepare_v2(_contactDB, query_stmt, -1, &statement, NULL) == SQLITE_OK) {
-            while (sqlite3_step(statement) == SQLITE_ROW) {
-                const unsigned char* rowData = sqlite3_column_text(statement, 1);
+    while (sqlite3_step(queryReturn) == SQLITE_ROW) {
+        const unsigned char* rowData = sqlite3_column_text(queryReturn, 1);
                 
-                printf("Category: %s\n", rowData);
-            }
-            sqlite3_finalize(statement);
-        } else
-            NSLog(@"shits all fucked");
-        sqlite3_close(_contactDB);
+        printf("Category: %s\n", rowData);
     }
+    [self finalizeAndClose:queryReturn];
 }
-- (void)createEditableCopyOfDatabaseIfNeeded {
+
+
+
+- (void)initializeDB {
     NSFileManager* fileManager = [[NSFileManager alloc] init];
     NSError*__autoreleasing* error;
    
@@ -181,6 +156,32 @@
     
     self.databasePath = pathToDocumentsDB;
 }
+
+//need to execute finalize and close after using statement
+- (sqlite3_stmt*) executeQuery:(NSString*)query {
+    const char *dbpath = [_databasePath UTF8String];
+    sqlite3_stmt    *statement;
+    const char *query_stmt = [query UTF8String];
+    
+    if (sqlite3_open(dbpath, &_contactDB) == SQLITE_OK) {
+        if (sqlite3_prepare_v2(_contactDB, query_stmt, -1, &statement, NULL) == SQLITE_OK)
+            return statement;
+        else {
+            NSLog(@"Query failed");
+            return nil;
+        }
+    } else {
+        NSLog(@"Query failed");
+        return nil;
+    }
+}
+
+- (void) finalizeAndClose:(sqlite3_stmt*)statement {
+    sqlite3_finalize(statement);
+    sqlite3_close(_contactDB);
+}
+
+
 
 
 
