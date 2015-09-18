@@ -45,8 +45,18 @@
     UIGraphicsEndImageContext();
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+    
+    // change searchbar font
+    [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setDefaultTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"Avenir" size:14],
+                                                                    }];
+    
+    // add scope bar
+//    self.searchBar.scopeButtonTitles = [NSArray arrayWithObjects:@"string1", @"string2", nil];
+//    self.searchBar.showsScopeBar = YES;
+//    self.searchBar.delegate = self;
+//    [self.searchBar sizeToFit];
+//    
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

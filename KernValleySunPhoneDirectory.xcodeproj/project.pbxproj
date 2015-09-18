@@ -21,6 +21,13 @@
 		B0E76C151BA6D37900F90982 /* StandardEntryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E76C141BA6D37900F90982 /* StandardEntryCell.m */; };
 		DC6D24071BAC7FEC0035651C /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC6D24061BAC7FEC0035651C /* Images-2.xcassets */; };
 		DC6D240B1BAC88910035651C /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = DC6D240A1BAC88910035651C /* background.png */; };
+		DC6D24131BAC8ECD0035651C /* AppleSDGothicNeo-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DC6D240C1BAC8ECD0035651C /* AppleSDGothicNeo-ExtraBold.otf */; };
+		DC6D24141BAC8ECD0035651C /* AppleSDGothicNeo-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = DC6D240D1BAC8ECD0035651C /* AppleSDGothicNeo-Heavy.otf */; };
+		DC6D24151BAC8ECD0035651C /* AppleSDGothicNeo-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = DC6D240E1BAC8ECD0035651C /* AppleSDGothicNeo-Light.otf */; };
+		DC6D24161BAC8ECD0035651C /* AppleSDGothicNeo-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = DC6D240F1BAC8ECD0035651C /* AppleSDGothicNeo-Medium.otf */; };
+		DC6D24171BAC8ECD0035651C /* AppleSDGothicNeo-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DC6D24101BAC8ECD0035651C /* AppleSDGothicNeo-SemiBold.otf */; };
+		DC6D24181BAC8ECD0035651C /* AppleSDGothicNeo-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = DC6D24111BAC8ECD0035651C /* AppleSDGothicNeo-Thin.otf */; };
+		DC6D24191BAC8ECD0035651C /* AppleSDGothicNeo-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = DC6D24121BAC8ECD0035651C /* AppleSDGothicNeo-UltraLight.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +65,13 @@
 		B0E76C141BA6D37900F90982 /* StandardEntryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StandardEntryCell.m; path = ../StandardEntryCell.m; sourceTree = "<group>"; };
 		DC6D24061BAC7FEC0035651C /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
 		DC6D240A1BAC88910035651C /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		DC6D240C1BAC8ECD0035651C /* AppleSDGothicNeo-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AppleSDGothicNeo-ExtraBold.otf"; sourceTree = "<group>"; };
+		DC6D240D1BAC8ECD0035651C /* AppleSDGothicNeo-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AppleSDGothicNeo-Heavy.otf"; sourceTree = "<group>"; };
+		DC6D240E1BAC8ECD0035651C /* AppleSDGothicNeo-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AppleSDGothicNeo-Light.otf"; sourceTree = "<group>"; };
+		DC6D240F1BAC8ECD0035651C /* AppleSDGothicNeo-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AppleSDGothicNeo-Medium.otf"; sourceTree = "<group>"; };
+		DC6D24101BAC8ECD0035651C /* AppleSDGothicNeo-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AppleSDGothicNeo-SemiBold.otf"; sourceTree = "<group>"; };
+		DC6D24111BAC8ECD0035651C /* AppleSDGothicNeo-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AppleSDGothicNeo-Thin.otf"; sourceTree = "<group>"; };
+		DC6D24121BAC8ECD0035651C /* AppleSDGothicNeo-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AppleSDGothicNeo-UltraLight.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +140,13 @@
 		B0E76BE41BA6B12700F90982 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DC6D240C1BAC8ECD0035651C /* AppleSDGothicNeo-ExtraBold.otf */,
+				DC6D240D1BAC8ECD0035651C /* AppleSDGothicNeo-Heavy.otf */,
+				DC6D240E1BAC8ECD0035651C /* AppleSDGothicNeo-Light.otf */,
+				DC6D240F1BAC8ECD0035651C /* AppleSDGothicNeo-Medium.otf */,
+				DC6D24101BAC8ECD0035651C /* AppleSDGothicNeo-SemiBold.otf */,
+				DC6D24111BAC8ECD0035651C /* AppleSDGothicNeo-Thin.otf */,
+				DC6D24121BAC8ECD0035651C /* AppleSDGothicNeo-UltraLight.otf */,
 				B0E76BE51BA6B12700F90982 /* Info.plist */,
 				B0E76BE61BA6B12700F90982 /* main.m */,
 			);
@@ -229,11 +250,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC6D24191BAC8ECD0035651C /* AppleSDGothicNeo-UltraLight.otf in Resources */,
+				DC6D24161BAC8ECD0035651C /* AppleSDGothicNeo-Medium.otf in Resources */,
+				DC6D24141BAC8ECD0035651C /* AppleSDGothicNeo-Heavy.otf in Resources */,
 				B0C7D3701BABADB40077A3AC /* entries.db in Resources */,
 				DC6D240B1BAC88910035651C /* background.png in Resources */,
+				DC6D24131BAC8ECD0035651C /* AppleSDGothicNeo-ExtraBold.otf in Resources */,
+				DC6D24181BAC8ECD0035651C /* AppleSDGothicNeo-Thin.otf in Resources */,
 				B0E76BF01BA6B12700F90982 /* Main.storyboard in Resources */,
 				B0E76C121BA6D32800F90982 /* StandardEntryCell.xib in Resources */,
 				DC6D24071BAC7FEC0035651C /* Images-2.xcassets in Resources */,
+				DC6D24151BAC8ECD0035651C /* AppleSDGothicNeo-Light.otf in Resources */,
+				DC6D24171BAC8ECD0035651C /* AppleSDGothicNeo-SemiBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
