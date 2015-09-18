@@ -2,8 +2,6 @@
 //  ViewController.m
 //  KernValleySunPhoneDirectory
 //
-//  Created by Steven Mackey on 9/14/15.
-//  Copyright (c) 2015 Steven Mackey. All rights reserved.
 //
 #import "ViewController.h"
 #import "ResultsEntries.h"
@@ -39,6 +37,14 @@
     
     //Initialize resultsArray with all entries
     self.resultsArray = [self.dbManager searchByName:@""];
+    
+    //initialize background image
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:@"background.png"] drawInRect:self.view.bounds];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
 }
 
 - (void)didReceiveMemoryWarning {

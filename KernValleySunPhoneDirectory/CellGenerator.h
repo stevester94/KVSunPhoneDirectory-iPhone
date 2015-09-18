@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 #import "ResultsEntries.h"
 
-#define STANDARD_CELL_HEIGHT 76.0
+#define STANDARD_CELL_HEIGHT 60
 #define CATEGORY_CELL_HEIGHT 76.0
 
 
