@@ -22,3 +22,6 @@
 
 @implementation ImageEntry
 @end
+
+@implementation RawEntry
+@end

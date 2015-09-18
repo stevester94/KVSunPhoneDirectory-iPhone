@@ -8,33 +8,20 @@
 #import "ViewController.h"
 #import "ResultsEntries.h"
 #import "CellGenerator.h"
+#import "DBManager.h"
 
 @interface ViewController ()
 @property (strong, nonatomic) NSArray* resultsArray;
 @property (strong, nonatomic) CellGenerator* cellGenerator;
+@property (strong, nonatomic) DBManager* dbManager;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //Load up resultsArray with dummies
-    StandardEntry* testEntry;
-    testEntry = [StandardEntry alloc];
-    testEntry.displayName = @"Holy shit did that just work??";
-    testEntry.allLines = @"These are all of the lines for the test entry!";
-    testEntry.entryType = standardEntry;
-    
-    StandardEntry* testEntry2;
-    testEntry2 = [StandardEntry alloc];
-    testEntry2.displayName = @"TEST 2";
-    testEntry2.allLines = @"TEST2 TEXT";
-    testEntry2.entryType = standardEntry;
-    
-    
-
-    self.resultsArray = [[NSArray alloc] initWithObjects:testEntry, testEntry2, nil];
+    self.dbManager = [DBManager alloc];
+    [self.dbManager initializeDB];
     
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
@@ -46,8 +33,12 @@
     self.cellGenerator = [[CellGenerator alloc] init:self.resultsTableView];
     
     //No idea why you have to do this
+    //  Have to let table view use the standard cells
     [self.resultsTableView registerNib:[UINib nibWithNibName:@"StandardEntryCell" bundle:nil]
          forCellReuseIdentifier:@"StandardCell"];
+    
+    //Initialize resultsArray with all entries
+    self.resultsArray = [self.dbManager searchByName:@""];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -72,17 +63,14 @@
 
 
 #pragma Search Bar
-//- (void) filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope {
-//    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"SELF beginswith[c] %@", searchText];
-//    self.resultsArray = [self.possibleArray filteredArrayUsingPredicate:predicate];
-//}
-//
-//
+//Will submit changed text to DBManager from here
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-//    [self filterContentForSearchText:searchText scope:nil];
     NSLog(@"text did change!");
-//    NSLog(searchText);
-//    [self.resultsTableView reloadData];
+    //Will need a switch statement here to determine which search method to use from db manager
+    self.resultsArray = [self.dbManager searchByName:searchText];
+    //TEST
+    self.resultsArray = [self.dbManager getAllCategories];
+    [self.resultsTableView reloadData];
 }
 
 //Called when user clicks on the results. Via gesture recognizer

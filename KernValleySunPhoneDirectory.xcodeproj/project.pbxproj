@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B057F0C01BABC91400613438 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B057F0BF1BABC91400613438 /* libsqlite3.0.dylib */; };
 		B0C7D3701BABADB40077A3AC /* entries.db in Resources */ = {isa = PBXBuildFile; fileRef = B0C7D36D1BABADB40077A3AC /* entries.db */; };
 		B0C7D3711BABADB40077A3AC /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C7D36E1BABADB40077A3AC /* DBManager.m */; };
 		B0E76BE71BA6B12700F90982 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E76BE61BA6B12700F90982 /* main.m */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B057F0BF1BABC91400613438 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		B0C7D36D1BABADB40077A3AC /* entries.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = entries.db; sourceTree = "<group>"; };
 		B0C7D36E1BABADB40077A3AC /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		B0C7D36F1BABADB40077A3AC /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
@@ -49,7 +51,7 @@
 		B0E76BFA1BA6B12700F90982 /* KernValleySunPhoneDirectoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KernValleySunPhoneDirectoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0E76BFF1BA6B12700F90982 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0E76C001BA6B12700F90982 /* KernValleySunPhoneDirectoryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KernValleySunPhoneDirectoryTests.m; sourceTree = "<group>"; };
-		B0E76C0A1BA6C0E400F90982 /* CellGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellGenerator.m; sourceTree = "<group>"; };
+		B0E76C0A1BA6C0E400F90982 /* CellGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellGenerator.m; sourceTree = "<group>"; wrapsLines = 0; };
 		B0E76C0C1BA6C14600F90982 /* CellGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellGenerator.h; sourceTree = "<group>"; };
 		B0E76C0D1BA6C1E000F90982 /* ResultsEntries.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultsEntries.h; sourceTree = "<group>"; };
 		B0E76C0F1BA6CFA900F90982 /* ResultsEntries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsEntries.m; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B057F0C01BABC91400613438 /* libsqlite3.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +82,7 @@
 		B0E76BD81BA6B12700F90982 = {
 			isa = PBXGroup;
 			children = (
+				B057F0BF1BABC91400613438 /* libsqlite3.0.dylib */,
 				B0E76BE31BA6B12700F90982 /* KernValleySunPhoneDirectory */,
 				B0E76BFD1BA6B12700F90982 /* KernValleySunPhoneDirectoryTests */,
 				B0E76BE21BA6B12700F90982 /* Products */,

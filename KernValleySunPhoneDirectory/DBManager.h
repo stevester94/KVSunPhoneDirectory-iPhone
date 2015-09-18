@@ -21,10 +21,12 @@
 - (void)findContact:(id)sender name:(NSString*)name;
 - (void)createAndCheckDatabase;
 - (void)getAllData;
-- (void) searchByName:(NSString*)name;
-- (void)searchByNumber:(NSString*)number;
-- (void)searchByCategory:(NSString*)category;
+- (NSMutableArray*)getAllCategories;
+- (NSMutableArray*) searchByName:(NSString*)name;
+- (NSMutableArray*)searchByNumber:(NSString*)number;
+- (NSMutableArray*)searchByCategory:(NSString*)category;
 - (void)testEntriesDB;
+- (void)testCategories;
 
 
 @property (strong, nonatomic) NSString *databasePath;

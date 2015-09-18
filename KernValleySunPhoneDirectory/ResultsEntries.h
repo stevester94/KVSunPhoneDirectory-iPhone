@@ -8,8 +8,19 @@
 @class ResultsEntry, ImageEntry, CategoryEntry, StandardEntry;
 typedef enum {imageEntry, categoryEntry, standardEntry} EntryType;
 
+
+
 @interface ResultsEntry : NSObject
 @property (nonatomic) EntryType entryType;
+@end
+
+@interface RawEntry : ResultsEntry
+@property (strong, atomic) NSString* displayName;
+@property (strong, atomic) NSString* associatedNumbers;
+@property (strong, atomic) NSString* allLines;
+@property (strong, atomic) NSString* bannerPath;
+@property (strong, atomic) NSString* hasMultipleNumbers;
+@property (strong, atomic) NSString* hasMultipleLines;
 @end
 
 @interface ImageEntry : ResultsEntry

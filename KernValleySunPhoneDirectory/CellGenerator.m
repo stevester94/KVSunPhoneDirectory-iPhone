@@ -43,13 +43,13 @@
 
     switch (entry.entryType) {
         case imageEntry:
-            cell = [self generateImageCell:(ImageEntry*)entry];
+            cell = [self generateImageCell:entry];
             break;
         case standardEntry:
-            cell = [self generateStandardCell:(StandardEntry*)entry];
+            cell = [self generateStandardCell:entry];
             break;
         case categoryEntry:
-            cell = [self generateCategoryCell:(CategoryEntry*)entry];
+            cell = [self generateCategoryCell:entry];
             break;
         default:
             NSLog(@"CRASHING, CELL NOT GENERATED");
@@ -63,11 +63,12 @@
 
 
 
-- (UITableViewCell*) generateImageCell:(ImageEntry*)imageEntry; {
-    return nil;
+- (UITableViewCell*) generateImageCell:(ImageEntry*)imageEntry {
+    imageEntry.allLines = @"IMAGE CELL";
+    return [self generateStandardCell:(StandardEntry*)imageEntry];
 }
 
-- (UITableViewCell*) generateStandardCell:(StandardEntry*)standardEntry; {
+- (UITableViewCell*) generateStandardCell:(StandardEntry*)standardEntry {
     static NSString *CellIdentifier = @"StandardCell";
     StandardEntryCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
@@ -82,7 +83,7 @@
 
 }
 
-- (UITableViewCell*) generateCategoryCell:(CategoryEntry*)imageEntry; {
-    return nil;
+- (UITableViewCell*) generateCategoryCell:(CategoryEntry*)categoryEntry {
+    return [self generateStandardCell:(StandardEntry*)categoryEntry];
 }
 @end

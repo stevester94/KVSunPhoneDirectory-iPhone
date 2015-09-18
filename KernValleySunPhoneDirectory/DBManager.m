@@ -7,6 +7,7 @@
 //
 
 #import "DBManager.h"
+#import "ResultsEntries.h"
 
 @interface DBManager ()
 
@@ -30,34 +31,8 @@
 }
 
 
-
-- (void) saveData:(id)sender name:(NSString*) name note:(NSString *)note
-{
-    sqlite3_stmt    *statement;
-    const char *dbpath = [_databasePath UTF8String];
-    
-    if (sqlite3_open(dbpath, &_contactDB) == SQLITE_OK)
-    {
-        
-        NSString *insertSQL = [NSString stringWithFormat:
-                               @"INSERT INTO CONTACTS (name, note) VALUES (\"%@\", \"%@\")",
-                               name, note];
-        
-        const char *insert_stmt = [insertSQL UTF8String];
-        sqlite3_prepare_v2(_contactDB, insert_stmt,
-                           -1, &statement, NULL);
-        if (sqlite3_step(statement) == SQLITE_DONE)
-        {
-            NSLog(@"save succesfull");
-        } else {
-            NSLog(@"Save failed");
-        }
-        sqlite3_finalize(statement);
-        sqlite3_close(_contactDB);
-    }
-}
 //schema: Entries(displayName TEXT PRIMARY KEY, associatedNumbers TEXT, allLines TEXT, bannerPath TEXT, hasMultipleNumbers BOOLEAN, hasMultipleLines BOOLEAN);
-- (void) searchByName:(NSString*)name {
+- (NSMutableArray*) searchByName:(NSString*)name {
     NSString* baseQuery = @"select * from Entries where displayName like ";
     NSString* query = [baseQuery stringByAppendingString:@"'%"];
     query = [query stringByAppendingString:name];
@@ -65,11 +40,11 @@
 
     
     sqlite3_stmt* statement = [self executeQuery:query];
-    [self dumpAllRowsFromStatement:statement];
+    return [self dumpAllEntriesFromStatement:statement];
 }
 
 //schema: Categories(displayName TEXT, category TEXT, FOREIGN KEY(displayName) REFERENCES entries(displayName));
-- (void) searchByCategory:(NSString *)category {
+- (NSMutableArray*) searchByCategory:(NSString *)category {
     NSString* baseQuery = @"SELECT Entries.* from Entries, Categories where ";
     baseQuery = [baseQuery stringByAppendingString:@"Entries.displayName = Categories.displayName and Categories.category = "];
     NSString* query = [baseQuery stringByAppendingString:@"'"];
@@ -77,33 +52,65 @@
     query = [query stringByAppendingString:@"'"];
     
     sqlite3_stmt* statement = [self executeQuery:query];
-    [self dumpAllRowsFromStatement:statement];
+    return [self dumpAllEntriesFromStatement:statement];
     
 }
 
-- (void) searchByNumber:(NSString *)number {
+- (NSMutableArray*) getAllCategories {
+    NSString* baseQuery = @"select category from categorieslist";
+    NSMutableArray* rowDump = [[NSMutableArray alloc] init];
+    sqlite3_stmt* statement = [self executeQuery:baseQuery];
+    while(sqlite3_step(statement) == SQLITE_ROW) {
+        RawEntry* row = [RawEntry alloc];
+        
+        row.displayName = [NSString stringWithUTF8String:sqlite3_column_text(statement, 0)];
+        row.allLines = @"...";
+        //Determine type
+        row.entryType = categoryEntry;
+        [rowDump addObject:(CategoryEntry*)row];
+    }
+    
+    [self finalizeAndClose:statement];
+    return rowDump;
+}
+
+- (NSMutableArray*) searchByNumber:(NSString *)number {
     NSString* baseQuery = @"select * from Entries where associatedNumbers like ";
     NSString* query = [baseQuery stringByAppendingString:@"'%"];
     query = [query stringByAppendingString:number];
     query = [query stringByAppendingString:@"%'"];
     
     sqlite3_stmt* statement = [self executeQuery:query];
-    [self dumpAllRowsFromStatement:statement];
+    return [self dumpAllEntriesFromStatement:statement];
 }
 
-- (void) dumpAllRowsFromStatement:(sqlite3_stmt*)statement {
-    
+//Will only dump Entries!!!! NOT CATEGORIES!!!
+- (NSMutableArray*) dumpAllEntriesFromStatement:(sqlite3_stmt*)statement {
+    NSMutableArray* rowDump = [[NSMutableArray alloc] init];
     while(sqlite3_step(statement) == SQLITE_ROW) {
-        NSString* displayName = [NSString stringWithUTF8String:sqlite3_column_text(statement, 0)];
-        NSString* associatedNumbers = [NSString stringWithUTF8String:sqlite3_column_text(statement, 1)];
-        NSString* allLines = [NSString stringWithUTF8String:sqlite3_column_text(statement, 2)];
-        NSString* bannerPath = [NSString stringWithUTF8String:sqlite3_column_text(statement, 3)];
-        NSString* hasMultipleNumbers = [NSString stringWithUTF8String:sqlite3_column_text(statement, 4)];
-        NSString* hasMultipleLines = [NSString stringWithUTF8String:sqlite3_column_text(statement, 5)];
+        RawEntry* row = [RawEntry alloc];
         
-        NSLog(displayName);
+        row.displayName = [NSString stringWithUTF8String:sqlite3_column_text(statement, 0)];
+        row.associatedNumbers = [NSString stringWithUTF8String:sqlite3_column_text(statement, 1)];
+        row.allLines = [NSString stringWithUTF8String:sqlite3_column_text(statement, 2)];
+        row.bannerPath = [NSString stringWithUTF8String:sqlite3_column_text(statement, 3)];
+        row.hasMultipleNumbers = [NSString stringWithUTF8String:sqlite3_column_text(statement, 4)];
+        row.hasMultipleLines = [NSString stringWithUTF8String:sqlite3_column_text(statement, 5)];
+        
+        //Determine type
+        if([row.bannerPath isEqualToString:@"no path entered"]) {
+            row.entryType = standardEntry;
+            [rowDump addObject:(StandardEntry*)row];
+        } else {
+            row.entryType = imageEntry;
+            [rowDump addObject:(ImageEntry*)row];
+        }
+        
+        
     }
     [self finalizeAndClose:statement];
+    
+    return rowDump;
 }
 
 - (void) testEntriesDB {
@@ -179,6 +186,14 @@
 - (void) finalizeAndClose:(sqlite3_stmt*)statement {
     sqlite3_finalize(statement);
     sqlite3_close(_contactDB);
+}
+
+- (void) testCategories {
+    NSString* baseQuery = @"select * from categories";
+
+    
+    sqlite3_stmt* statement = [self executeQuery:baseQuery];
+    [self dumpAllEntriesFromStatement:statement];
 }
 
 
