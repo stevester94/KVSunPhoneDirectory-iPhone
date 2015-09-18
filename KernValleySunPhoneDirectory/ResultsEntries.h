@@ -19,8 +19,8 @@ typedef enum {imageEntry, categoryEntry, standardEntry} EntryType;
 @property (strong, atomic) NSString* associatedNumbers;
 @property (strong, atomic) NSString* allLines;
 @property (strong, atomic) NSString* bannerPath;
-@property (strong, atomic) NSString* hasMultipleNumbers;
-@property (strong, atomic) NSString* hasMultipleLines;
+@property (nonatomic) bool hasMultipleNumbers;
+@property (nonatomic) bool hasMultipleLines;
 @end
 
 @interface ImageEntry : ResultsEntry
@@ -36,6 +36,8 @@ typedef enum {imageEntry, categoryEntry, standardEntry} EntryType;
 
 @interface StandardEntry : ResultsEntry
 @property (strong, atomic) NSString* displayName;
+@property (strong, atomic) NSString* associatedNumbers;
 @property (strong, atomic) NSString* allLines;
+@property (nonatomic) bool hasMultipleNumbers;
 @end
 

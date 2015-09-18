@@ -63,7 +63,7 @@
     while(sqlite3_step(statement) == SQLITE_ROW) {
         RawEntry* row = [RawEntry alloc];
         
-        row.displayName = [NSString stringWithUTF8String:sqlite3_column_text(statement, 0)];
+        row.displayName = [NSString stringWithUTF8String:(const char*)sqlite3_column_text(statement, 0)];
         row.allLines = @"...";
         //Determine type
         row.entryType = categoryEntry;
@@ -90,12 +90,12 @@
     while(sqlite3_step(statement) == SQLITE_ROW) {
         RawEntry* row = [RawEntry alloc];
         
-        row.displayName = [NSString stringWithUTF8String:sqlite3_column_text(statement, 0)];
-        row.associatedNumbers = [NSString stringWithUTF8String:sqlite3_column_text(statement, 1)];
-        row.allLines = [NSString stringWithUTF8String:sqlite3_column_text(statement, 2)];
-        row.bannerPath = [NSString stringWithUTF8String:sqlite3_column_text(statement, 3)];
-        row.hasMultipleNumbers = [NSString stringWithUTF8String:sqlite3_column_text(statement, 4)];
-        row.hasMultipleLines = [NSString stringWithUTF8String:sqlite3_column_text(statement, 5)];
+        row.displayName = [NSString stringWithUTF8String:(const char*)sqlite3_column_text(statement, 0)];
+        row.associatedNumbers = [NSString stringWithUTF8String:(const char*)sqlite3_column_text(statement, 1)];
+        row.allLines = [NSString stringWithUTF8String:(const char*)sqlite3_column_text(statement, 2)];
+        row.bannerPath = [NSString stringWithUTF8String:(const char*)sqlite3_column_text(statement, 3)];
+        row.hasMultipleNumbers = (bool)sqlite3_column_int(statement, 4);
+        row.hasMultipleLines = (bool)sqlite3_column_int(statement, 5);
         
         //Determine type
         if([row.bannerPath isEqualToString:@"no path entered"]) {

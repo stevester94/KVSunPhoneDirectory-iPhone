@@ -64,21 +64,28 @@
 
 
 - (UITableViewCell*) generateImageCell:(ImageEntry*)imageEntry {
+    //so this shit doesnt brake
+    StandardEntry* standardEntryConv = [StandardEntry alloc];
+    standardEntryConv = (StandardEntry*)imageEntry;
+    standardEntryConv.hasMultipleNumbers = YES;
     imageEntry.allLines = @"IMAGE CELL";
     return [self generateStandardCell:(StandardEntry*)imageEntry];
 }
 
 - (UITableViewCell*) generateStandardCell:(StandardEntry*)standardEntry {
+    //Alocate cell
     static NSString *CellIdentifier = @"StandardCell";
     StandardEntryCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
     if (cell == nil)
         cell = [[StandardEntryCell alloc] init];
     
+    //Set labels
     cell.displayNameLabel.text = standardEntry.displayName;
-    cell.allLinesLabel.text = standardEntry.allLines;
-    
-    NSLog(@"standard cell generated");
+    if(standardEntry.hasMultipleNumbers)
+        cell.associatedNumberLabel.text = standardEntry.allLines;
+    else
+        cell.associatedNumberLabel.text = standardEntry.associatedNumbers;
+
     return cell;
 
 }

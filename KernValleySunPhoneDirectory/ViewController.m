@@ -68,8 +68,6 @@
     NSLog(@"text did change!");
     //Will need a switch statement here to determine which search method to use from db manager
     self.resultsArray = [self.dbManager searchByName:searchText];
-    //TEST
-    self.resultsArray = [self.dbManager getAllCategories];
     [self.resultsTableView reloadData];
 }
 

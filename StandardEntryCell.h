@@ -10,6 +10,6 @@
 
 @interface StandardEntryCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *displayNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *allLinesLabel;
+@property (weak, nonatomic) IBOutlet UILabel *associatedNumberLabel;
 
 @end
