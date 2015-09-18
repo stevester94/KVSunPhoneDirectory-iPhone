@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,15 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gz1-b3-eOq">
-                                <rect key="frame" x="0.0" y="114" width="600" height="486"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="qpl-ze-Cul"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="A88-Kv-Ybb"/>
-                                </connections>
-                            </tableView>
-                            <searchBar contentMode="redraw" placeholder="Please Enter Your Query" showsScopeBar="YES" translatesAutoresizingMaskIntoConstraints="NO" id="56i-J5-pjo">
+                            <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" placeholder="Please Enter Your Query" showsScopeBar="YES" translatesAutoresizingMaskIntoConstraints="NO" id="56i-J5-pjo">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="0un-5Z-tg7"/>
@@ -39,16 +32,23 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="wI7-OG-Vlm"/>
                                 </connections>
                             </searchBar>
+                            <tableView opaque="NO" clipsSubviews="YES" alpha="0.59999999999999998" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gz1-b3-eOq">
+                                <rect key="frame" x="16" y="72" width="568" height="520"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="qpl-ze-Cul"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="A88-Kv-Ybb"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="gz1-b3-eOq" firstAttribute="top" secondItem="56i-J5-pjo" secondAttribute="bottom" constant="8" id="1jI-K7-FDg"/>
                             <constraint firstItem="56i-J5-pjo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="3Wh-Sb-ph1"/>
-                            <constraint firstItem="gz1-b3-eOq" firstAttribute="top" secondItem="56i-J5-pjo" secondAttribute="bottom" constant="50" id="NFu-Q3-WJZ"/>
-                            <constraint firstItem="gz1-b3-eOq" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="W6g-FF-Ly2"/>
-                            <constraint firstItem="gz1-b3-eOq" firstAttribute="leading" secondItem="56i-J5-pjo" secondAttribute="leading" id="kPT-9R-fWt"/>
-                            <constraint firstAttribute="trailing" secondItem="56i-J5-pjo" secondAttribute="trailing" id="mNQ-tY-imE"/>
-                            <constraint firstItem="gz1-b3-eOq" firstAttribute="trailing" secondItem="56i-J5-pjo" secondAttribute="trailing" id="prp-VS-m9i"/>
-                            <constraint firstItem="gz1-b3-eOq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qyD-1B-hK6"/>
+                            <constraint firstItem="gz1-b3-eOq" firstAttribute="centerX" secondItem="56i-J5-pjo" secondAttribute="centerX" id="9ax-TN-vEp"/>
+                            <constraint firstItem="gz1-b3-eOq" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Asf-42-ASP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gz1-b3-eOq" secondAttribute="bottom" constant="8" symbolic="YES" id="R5p-l8-YU8"/>
+                            <constraint firstItem="gz1-b3-eOq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YDe-Ad-sHh"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="z7F-0V-wUe" appends="YES" id="stA-eu-hLm"/>
