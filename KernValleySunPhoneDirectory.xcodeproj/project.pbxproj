@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0C7D3701BABADB40077A3AC /* entries.db in Resources */ = {isa = PBXBuildFile; fileRef = B0C7D36D1BABADB40077A3AC /* entries.db */; };
+		B0C7D3711BABADB40077A3AC /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C7D36E1BABADB40077A3AC /* DBManager.m */; };
 		B0E76BE71BA6B12700F90982 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E76BE61BA6B12700F90982 /* main.m */; };
 		B0E76BEA1BA6B12700F90982 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E76BE91BA6B12700F90982 /* AppDelegate.m */; };
 		B0E76BED1BA6B12700F90982 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E76BEC1BA6B12700F90982 /* ViewController.m */; };
@@ -31,6 +33,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B0C7D36D1BABADB40077A3AC /* entries.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = entries.db; sourceTree = "<group>"; };
+		B0C7D36E1BABADB40077A3AC /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		B0C7D36F1BABADB40077A3AC /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		B0E76BE11BA6B12700F90982 /* KernValleySunPhoneDirectory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KernValleySunPhoneDirectory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0E76BE51BA6B12700F90982 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0E76BE61BA6B12700F90982 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -93,6 +98,9 @@
 			isa = PBXGroup;
 			children = (
 				B0E76C111BA6D32800F90982 /* StandardEntryCell.xib */,
+				B0C7D36D1BABADB40077A3AC /* entries.db */,
+				B0C7D36E1BABADB40077A3AC /* DBManager.m */,
+				B0C7D36F1BABADB40077A3AC /* DBManager.h */,
 				B0E76C131BA6D37900F90982 /* StandardEntryCell.h */,
 				B0E76C141BA6D37900F90982 /* StandardEntryCell.m */,
 				B0E76BE81BA6B12700F90982 /* AppDelegate.h */,
@@ -217,6 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0C7D3701BABADB40077A3AC /* entries.db in Resources */,
 				B0E76BF01BA6B12700F90982 /* Main.storyboard in Resources */,
 				B0E76C121BA6D32800F90982 /* StandardEntryCell.xib in Resources */,
 				B0E76BF51BA6B12700F90982 /* LaunchScreen.xib in Resources */,
@@ -238,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0C7D3711BABADB40077A3AC /* DBManager.m in Sources */,
 				B0E76C151BA6D37900F90982 /* StandardEntryCell.m in Sources */,
 				B0E76BED1BA6B12700F90982 /* ViewController.m in Sources */,
 				B0E76C0B1BA6C0E400F90982 /* CellGenerator.m in Sources */,
@@ -440,6 +450,7 @@
 				B0E76C061BA6B12700F90982 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B0E76C071BA6B12700F90982 /* Build configuration list for PBXNativeTarget "KernValleySunPhoneDirectoryTests" */ = {
 			isa = XCConfigurationList;
@@ -448,6 +459,7 @@
 				B0E76C091BA6B12700F90982 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
