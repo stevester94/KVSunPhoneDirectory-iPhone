@@ -7,7 +7,7 @@
 #import "ResultsEntries.h"
 
 #define STANDARD_CELL_HEIGHT 60
-#define CATEGORY_CELL_HEIGHT 76.0
+#define CATEGORY_CELL_HEIGHT 76
 
 
 @interface CellGenerator : NSObject

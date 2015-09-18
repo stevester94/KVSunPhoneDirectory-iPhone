@@ -1,12 +1,14 @@
 //
-//  StandardEntryCellTableViewCell.m
+//  ImageEntryCell.m
 //  KernValleySunPhoneDirectory
 //
+//  Created by Steven S. Mackey on 9/18/15.
+//  Copyright (c) 2015 Steven Mackey. All rights reserved.
 //
 
-#import "StandardEntryCell.h"
+#import "ImageEntryCell.h"
 
-@implementation StandardEntryCell
+@implementation ImageEntryCell
 
 - (void)awakeFromNib {
     // Initialization code

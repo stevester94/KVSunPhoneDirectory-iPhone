@@ -17,24 +17,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar opaque="NO" contentMode="redraw" misplaced="YES" showsScopeBar="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7xe-K5-gCU">
-                                <rect key="frame" x="16" y="20" width="568" height="100"/>
+                            <searchBar opaque="NO" alpha="0.75" contentMode="redraw" misplaced="YES" placeholder="Enter Your Query" showsScopeBar="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7xe-K5-gCU">
+                                <rect key="frame" x="16" y="25" width="568" height="88"/>
                                 <color key="backgroundColor" red="0.29428388655844123" green="0.24178256760400188" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="vLh-8h-p5K"/>
+                                    <constraint firstAttribute="height" constant="100" id="d9p-E9-8Ap"/>
                                 </constraints>
+                                <color key="barTintColor" red="0.61763343838448281" green="0.84135432232646745" blue="0.89530066287878785" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
-                                    <string>By Category</string>
-                                    <string>By Number</string>
                                     <string>By Name</string>
+                                    <string>By Number</string>
+                                    <string>By Category</string>
                                 </scopeButtonTitles>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="y8H-dz-q5d"/>
                                 </connections>
                             </searchBar>
                             <tableView opaque="NO" clipsSubviews="YES" alpha="0.59999999999999998" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gz1-b3-eOq">
-                                <rect key="frame" x="16" y="130" width="568" height="462"/>
+                                <rect key="frame" x="16" y="140" width="568" height="445"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="qpl-ze-Cul"/>
@@ -42,15 +43,15 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7xe-K5-gCU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="2Cz-iY-30V"/>
-                            <constraint firstItem="7xe-K5-gCU" firstAttribute="leading" secondItem="gz1-b3-eOq" secondAttribute="leading" id="DjC-dB-ti5"/>
-                            <constraint firstItem="7xe-K5-gCU" firstAttribute="trailing" secondItem="gz1-b3-eOq" secondAttribute="trailing" id="Heu-lF-fsC"/>
-                            <constraint firstItem="7xe-K5-gCU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Kjd-7A-eTb"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gz1-b3-eOq" secondAttribute="bottom" constant="8" symbolic="YES" id="RUM-4W-EX0"/>
-                            <constraint firstItem="gz1-b3-eOq" firstAttribute="top" secondItem="7xe-K5-gCU" secondAttribute="bottom" constant="10" id="Wip-g0-GLR"/>
-                            <constraint firstItem="7xe-K5-gCU" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="dxm-1O-qtv"/>
+                            <constraint firstItem="gz1-b3-eOq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Cnh-Tj-D46"/>
+                            <constraint firstItem="gz1-b3-eOq" firstAttribute="leading" secondItem="7xe-K5-gCU" secondAttribute="leading" id="NDX-zE-YB3"/>
+                            <constraint firstItem="gz1-b3-eOq" firstAttribute="top" secondItem="7xe-K5-gCU" secondAttribute="bottom" constant="15" id="TQu-iq-Jig"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gz1-b3-eOq" secondAttribute="bottom" constant="15" id="Vb0-Jt-W79"/>
+                            <constraint firstItem="7xe-K5-gCU" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ZpM-T5-FZA"/>
+                            <constraint firstItem="gz1-b3-eOq" firstAttribute="trailing" secondItem="7xe-K5-gCU" secondAttribute="trailing" id="j8U-Yn-dnS"/>
+                            <constraint firstItem="7xe-K5-gCU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="mmO-bK-pB6"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="z7F-0V-wUe" appends="YES" id="stA-eu-hLm"/>

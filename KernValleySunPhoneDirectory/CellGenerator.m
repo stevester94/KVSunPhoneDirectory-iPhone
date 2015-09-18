@@ -8,6 +8,7 @@
 #import "CellGenerator.h"
 #import "ResultsEntries.h"
 #import "StandardEntryCell.h"
+#import "ImageEntryCell.h"
 
 @implementation CellGenerator
 - (id) init:(UITableView*)tableViewRef {
@@ -18,10 +19,12 @@
 }
 
 - (CGFloat) calculateCellHeight:(ResultsEntry*)entry {
+    NSString *bannerPath = @"ready/";
     switch (entry.entryType) {
         case imageEntry:
-            //DO MATH HERE!
-            return -1;
+            bannerPath = [bannerPath stringByAppendingString:((ImageEntry*)entry).bannerPath];
+            bannerPath = [bannerPath stringByAppendingString:@".jpg"];
+            return [UIImage imageNamed: bannerPath].size.height * 0.5;
             break;
         case standardEntry:
             return STANDARD_CELL_HEIGHT;
@@ -59,15 +62,20 @@
 }
 
 
-
-
 - (UITableViewCell*) generateImageCell:(ImageEntry*)imageEntry {
-    //so this shit doesnt brake
-    StandardEntry* standardEntryConv = [StandardEntry alloc];
-    standardEntryConv = (StandardEntry*)imageEntry;
-    standardEntryConv.hasMultipleNumbers = YES;
-    imageEntry.allLines = @"IMAGE CELL";
-    return [self generateStandardCell:(StandardEntry*)imageEntry];
+    //Alocate cell
+    static NSString *CellIdentifier = @"ImageCell";
+    ImageEntryCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (cell == nil)
+        cell = [[ImageEntryCell alloc] init];
+    NSString* bannerPath = @"ready/";
+    bannerPath = [bannerPath stringByAppendingString:imageEntry.bannerPath];
+    bannerPath = [bannerPath stringByAppendingString:@".jpg"];
+    //NSLog(bannerPath);
+    
+    [cell.bannerImageView setImage:[UIImage imageNamed: bannerPath]];
+    return cell;
 }
 
 - (UITableViewCell*) generateStandardCell:(StandardEntry*)standardEntry {
