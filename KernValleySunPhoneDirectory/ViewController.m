@@ -59,7 +59,11 @@
     
     //Initialize scope
     self.currentScopeIndex = 0;
+    
 }
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -81,7 +85,26 @@
     return [self.cellGenerator calculateCellHeight:[self.resultsArray objectAtIndex:indexPath.row]];
 }
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString* allLines = ((ResultsEntry*)[self.resultsArray objectAtIndex:indexPath.row]).allLines;
+    UIAlertView *messageAlert = [UIAlertView alloc];
+    switch (self.currentScopeIndex) {
+        case 0://Search by name
+        case 1://Search by number
+            [messageAlert initWithTitle:@"Contact Information" message:allLines delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            break;
+        case 2://Search by category
+            self.resultsArray = [self.dbManager searchByCategory:((StandardEntry*)[self.resultsArray objectAtIndex:indexPath.row]).displayName];
+            [tableView reloadData];
+           // [messageAlert initWithTitle:@"Contact Information" message:allLines delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            break;
+        default:
+            break;
+    }
+    //Display Alert Message
+    [messageAlert show];
+}
 
 
 
