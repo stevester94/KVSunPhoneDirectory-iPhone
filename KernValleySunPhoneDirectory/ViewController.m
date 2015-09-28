@@ -97,7 +97,8 @@
         case 2://Search by category
             self.resultsArray = [self.dbManager searchByCategory:((StandardEntry*)[self.resultsArray objectAtIndex:indexPath.row]).displayName];
             [tableView reloadData];
-           // [messageAlert initWithTitle:@"Contact Information" message:allLines delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            self.currentScopeIndex = 0;
+           [messageAlert initWithTitle:@"Contact Information" message:allLines delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
             break;
         default:
             break;
