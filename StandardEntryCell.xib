@@ -13,15 +13,15 @@
             <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ugV-aI-WCE" id="xSl-Hu-W9O">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gjc-tc-5Jm">
-                        <rect key="frame" x="0.0" y="8" width="404" height="21"/>
-                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Gjc-tc-5Jm">
+                        <rect key="frame" x="0.0" y="0.0" width="404" height="55"/>
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJf-7z-gFw">
                         <rect key="frame" x="0.0" y="63" width="404" height="21"/>
-                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -39,6 +39,7 @@
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.61763343839999996" green="0.84135432229999996" blue="0.89530066289999999" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
             <connections>
+                <outlet property="associatedNumberLabel" destination="mJf-7z-gFw" id="Cwb-wQ-MBz"/>
                 <outlet property="displayNameLabel" destination="Gjc-tc-5Jm" id="EUl-v7-d5Y"/>
             </connections>
             <point key="canvasLocation" x="456" y="-508.5"/>

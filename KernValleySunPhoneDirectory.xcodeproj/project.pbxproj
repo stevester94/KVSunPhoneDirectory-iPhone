@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B057F0C01BABC91400613438 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B057F0BF1BABC91400613438 /* libsqlite3.0.dylib */; };
-		B0C7D3701BABADB40077A3AC /* entries.db in Resources */ = {isa = PBXBuildFile; fileRef = B0C7D36D1BABADB40077A3AC /* entries.db */; };
 		B0C7D3711BABADB40077A3AC /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C7D36E1BABADB40077A3AC /* DBManager.m */; };
 		B0E76BE71BA6B12700F90982 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E76BE61BA6B12700F90982 /* main.m */; };
 		B0E76BEA1BA6B12700F90982 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E76BE91BA6B12700F90982 /* AppDelegate.m */; };
@@ -45,9 +44,9 @@
 
 /* Begin PBXFileReference section */
 		B057F0BF1BABC91400613438 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
-		B0C7D36D1BABADB40077A3AC /* entries.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = entries.db; sourceTree = "<group>"; };
 		B0C7D36E1BABADB40077A3AC /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		B0C7D36F1BABADB40077A3AC /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		B0D74EB31BD30D0E00F8F85E /* entries.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = entries.db; sourceTree = "<group>"; };
 		B0E76BE11BA6B12700F90982 /* KernValleySunPhoneDirectory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KernValleySunPhoneDirectory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0E76BE51BA6B12700F90982 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0E76BE61BA6B12700F90982 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -124,9 +123,9 @@
 			children = (
 				B0E76C111BA6D32800F90982 /* StandardEntryCell.xib */,
 				DC6D241A1BACAF020035651C /* ImageEntryCell.xib */,
-				B0C7D36D1BABADB40077A3AC /* entries.db */,
 				B0C7D36E1BABADB40077A3AC /* DBManager.m */,
 				B0C7D36F1BABADB40077A3AC /* DBManager.h */,
+				B0D74EB31BD30D0E00F8F85E /* entries.db */,
 				B0E76C131BA6D37900F90982 /* StandardEntryCell.h */,
 				B0E76C141BA6D37900F90982 /* StandardEntryCell.m */,
 				DC6D241C1BACAFBF0035651C /* ImageEntryCell.h */,
@@ -265,7 +264,6 @@
 				DC6D241B1BACAF020035651C /* ImageEntryCell.xib in Resources */,
 				DC6D24161BAC8ECD0035651C /* AppleSDGothicNeo-Medium.otf in Resources */,
 				DC6D24141BAC8ECD0035651C /* AppleSDGothicNeo-Heavy.otf in Resources */,
-				B0C7D3701BABADB40077A3AC /* entries.db in Resources */,
 				DC6D240B1BAC88910035651C /* background.png in Resources */,
 				DC6D24131BAC8ECD0035651C /* AppleSDGothicNeo-ExtraBold.otf in Resources */,
 				DC6D24181BAC8ECD0035651C /* AppleSDGothicNeo-Thin.otf in Resources */,

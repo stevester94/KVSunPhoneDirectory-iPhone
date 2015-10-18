@@ -23,6 +23,7 @@
 - (NSMutableArray*) searchByName:(NSString*)name;
 - (NSMutableArray*)searchByNumber:(NSString*)number;
 - (NSMutableArray*)searchByCategory:(NSString*)category;
+- (NSMutableArray*)searchByCategoryName:(NSString*)category;
 - (void)testEntriesDB;
 - (void)testCategories;
 

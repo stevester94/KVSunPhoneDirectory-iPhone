@@ -89,16 +89,28 @@
 {
     NSString* allLines = ((ResultsEntry*)[self.resultsArray objectAtIndex:indexPath.row]).allLines;
     UIAlertView *messageAlert = [UIAlertView alloc];
+    UIView* viewPopup;
+    AppDelegate *appdelgateobj=(AppDelegate *) [[UIApplication sharedApplication]delegate];
+
+    
     switch (self.currentScopeIndex) {
         case 0://Search by name
         case 1://Search by number
-            [messageAlert initWithTitle:@"Contact Information" message:allLines delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//            [messageAlert initWithTitle:@"Contact Information" message:allLines delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            // create a new view
+            viewPopup = [[UIView alloc]init];
+            [viewPopup setBackgroundColor:[UIColor blackColor]];
+            viewPopup.alpha=0.6f;
+            
+            // add into window
+            [appdelgateobj.window addSubview:viewPopup];
+            [appdelgateobj.window bringSubviewToFront:viewPopup];
+            
             break;
         case 2://Search by category
             self.resultsArray = [self.dbManager searchByCategory:((StandardEntry*)[self.resultsArray objectAtIndex:indexPath.row]).displayName];
             [tableView reloadData];
-            self.currentScopeIndex = 0;
-           [messageAlert initWithTitle:@"Contact Information" message:allLines delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//           [messageAlert initWithTitle:@"Contact Information" message:allLines delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
             break;
         default:
             break;
@@ -123,7 +135,7 @@
             self.resultsArray = [self.dbManager searchByNumber:searchText];
             break;
         case 2://Search by category
-            self.resultsArray = [self.dbManager getAllCategories];
+            self.resultsArray = [self.dbManager searchByCategoryName:searchText];
         default:
             break;
     }

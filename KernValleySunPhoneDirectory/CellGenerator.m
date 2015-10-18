@@ -88,7 +88,7 @@
     //Set labels
     cell.displayNameLabel.text = standardEntry.displayName;
     if(standardEntry.hasMultipleNumbers)
-        cell.associatedNumberLabel.text = standardEntry.allLines;
+        cell.associatedNumberLabel.text = @"...";
     else
         cell.associatedNumberLabel.text = standardEntry.associatedNumbers;
 

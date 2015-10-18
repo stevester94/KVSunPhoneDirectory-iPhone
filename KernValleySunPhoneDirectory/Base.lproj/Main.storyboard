@@ -34,7 +34,7 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="y8H-dz-q5d"/>
                                 </connections>
                             </searchBar>
-                            <tableView opaque="NO" clipsSubviews="YES" alpha="0.59999999999999998" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gz1-b3-eOq">
+                            <tableView opaque="NO" clipsSubviews="YES" alpha="0.80000000000000016" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gz1-b3-eOq">
                                 <rect key="frame" x="16" y="140" width="568" height="445"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>

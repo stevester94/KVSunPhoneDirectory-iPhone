@@ -54,6 +54,29 @@
     
 }
 
+- (NSMutableArray*) searchByCategoryName:(NSString*) category {
+    NSString* baseQuery = @"select category from categoriesList where category like ";
+    NSString* query = [baseQuery stringByAppendingString:@"'%"];
+    query = [query stringByAppendingString:category];
+    query = [query stringByAppendingString:@"%'"];
+    
+    
+    NSMutableArray* rowDump = [[NSMutableArray alloc] init];
+    sqlite3_stmt* statement = [self executeQuery:query];
+    while(sqlite3_step(statement) == SQLITE_ROW) {
+        RawEntry* row = [RawEntry alloc];
+        
+        row.displayName = [NSString stringWithUTF8String:(const char*)sqlite3_column_text(statement, 0)];
+        row.allLines = @"...";
+        //Determine type
+        row.entryType = categoryEntry;
+        [rowDump addObject:(CategoryEntry*)row];
+    }
+    
+    [self finalizeAndClose:statement];
+    return rowDump;
+}
+
 - (NSMutableArray*) getAllCategories {
     NSString* baseQuery = @"select category from categorieslist";
     NSMutableArray* rowDump = [[NSMutableArray alloc] init];
@@ -95,8 +118,11 @@
         row.hasMultipleNumbers = (bool)sqlite3_column_int(statement, 4);
         row.hasMultipleLines = (bool)sqlite3_column_int(statement, 5);
         
-        //Determine type
-        if([row.bannerPath isEqualToString:@"no path entered"]) {
+        if([row.displayName length] <= 5)
+            NSLog(@"Small!");
+        
+        //Determine type 
+       if([row.bannerPath isEqualToString:@"no path entered"]) {
             row.entryType = standardEntry;
             [rowDump addObject:(StandardEntry*)row];
         } else {
