@@ -7,6 +7,7 @@
 #import "ResultsEntries.h"
 #import "CellGenerator.h"
 #import "DBManager.h"
+#import "UIPopup.h"
 
 @interface ViewController ()
 @property (strong, nonatomic) NSArray* resultsArray;
@@ -14,6 +15,8 @@
 @property (strong, nonatomic) DBManager* dbManager;
 @property (nonatomic) NSInteger currentScopeIndex;
 @property (strong, nonatomic) NSArray* sectionsArray;
+@property (strong, nonatomic) UIPopup* popup;
+@property (nonatomic) BOOL isDisplayingCategories;
 @end
 
 @implementation ViewController
@@ -60,6 +63,15 @@
     //Initialize scope
     self.currentScopeIndex = 0;
     
+    //Popup
+    _popup = [[UIPopup alloc] initWithNibName:@"UIPopup" bundle:nil];
+    [self addChildViewController:_popup];
+    _popup.view.frame = self.view.frame;
+    [self.view addSubview:_popup.view];
+    [_popup didMoveToParentViewController:self];
+    [self.view bringSubviewToFront:_popup.view];
+    [_popup.view setHidden:YES];
+    
 }
 
 
@@ -88,37 +100,30 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString* allLines = ((ResultsEntry*)[self.resultsArray objectAtIndex:indexPath.row]).allLines;
-    UIAlertView *messageAlert = [UIAlertView alloc];
-    UIView* viewPopup;
-    AppDelegate *appdelgateobj=(AppDelegate *) [[UIApplication sharedApplication]delegate];
-
+    NSString* displayName;
     
     switch (self.currentScopeIndex) {
         case 0://Search by name
         case 1://Search by number
-//            [messageAlert initWithTitle:@"Contact Information" message:allLines delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            // create a new view
-            viewPopup = [[UIView alloc]init];
-            [viewPopup setBackgroundColor:[UIColor blackColor]];
-            viewPopup.alpha=0.6f;
-            
-            // add into window
-            [appdelgateobj.window addSubview:viewPopup];
-            [appdelgateobj.window bringSubviewToFront:viewPopup];
-            
+            [_popup setLabelText:allLines];
+            [_popup show];
             break;
         case 2://Search by category
-            self.resultsArray = [self.dbManager searchByCategory:((StandardEntry*)[self.resultsArray objectAtIndex:indexPath.row]).displayName];
-            [tableView reloadData];
-//           [messageAlert initWithTitle:@"Contact Information" message:allLines delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            if(_isDisplayingCategories) {
+                displayName = ((StandardEntry*)[self.resultsArray objectAtIndex:indexPath.row]).displayName;
+                self.resultsArray = [self.dbManager searchByCategory:displayName];
+                [tableView reloadData];
+                _searchBar.text = displayName;
+                _isDisplayingCategories = false;
+            } else {
+                [_popup setLabelText:allLines];
+                [_popup show];
+            }
             break;
         default:
             break;
     }
-    //Display Alert Message
-    [messageAlert show];
 }
-
 
 
 
@@ -135,6 +140,7 @@
             self.resultsArray = [self.dbManager searchByNumber:searchText];
             break;
         case 2://Search by category
+            _isDisplayingCategories = true;
             self.resultsArray = [self.dbManager searchByCategoryName:searchText];
         default:
             break;

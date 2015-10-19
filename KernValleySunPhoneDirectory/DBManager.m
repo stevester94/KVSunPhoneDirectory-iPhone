@@ -107,19 +107,24 @@
 
 //Will only dump Entries!!!! NOT CATEGORIES!!!
 - (NSMutableArray*) dumpAllEntriesFromStatement:(sqlite3_stmt*)statement {
+    setlocale (LC_ALL, "");
+    
     NSMutableArray* rowDump = [[NSMutableArray alloc] init];
     while(sqlite3_step(statement) == SQLITE_ROW) {
         RawEntry* row = [RawEntry alloc];
         
-        row.displayName = [NSString stringWithUTF8String:(const char*)sqlite3_column_text(statement, 0)];
+        
+        row.displayName = [NSString stringWithUTF8String:(const unsigned char*)sqlite3_column_text(statement, 0)];
         row.associatedNumbers = [NSString stringWithUTF8String:(const char*)sqlite3_column_text(statement, 1)];
         row.allLines = [NSString stringWithUTF8String:(const char*)sqlite3_column_text(statement, 2)];
         row.bannerPath = [NSString stringWithUTF8String:(const char*)sqlite3_column_text(statement, 3)];
         row.hasMultipleNumbers = (bool)sqlite3_column_int(statement, 4);
         row.hasMultipleLines = (bool)sqlite3_column_int(statement, 5);
         
-        if([row.displayName length] <= 5)
-            NSLog(@"Small!");
+        if([row.displayName length] <= 1) {
+            const unsigned char* rawDisplay = sqlite3_column_text(statement, 0);
+            printf(rawDisplay);
+        }
         
         //Determine type 
        if([row.bannerPath isEqualToString:@"no path entered"]) {
@@ -158,9 +163,9 @@
     //Check for file in bundle
     NSLog(@"Checking for database file in bundle");
     NSString *pathToBundleDB = [[NSBundle mainBundle]pathForResource:DATABASE_NAME ofType:@"db"];
-
+    NSLog(pathToBundleDB);
     if (!pathToBundleDB) {
-        NSLog(@"Unable to find file in bundle");
+        NSLog(@"Unable to find file in bundle");        
         return;
     }
     

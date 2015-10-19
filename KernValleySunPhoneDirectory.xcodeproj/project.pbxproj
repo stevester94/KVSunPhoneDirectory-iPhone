@@ -8,7 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		B057F0C01BABC91400613438 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B057F0BF1BABC91400613438 /* libsqlite3.0.dylib */; };
+		B08BB4EF1BD3550900DB8DFA /* UIPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = B08BB4ED1BD3550900DB8DFA /* UIPopup.m */; };
+		B08BB4F01BD3550900DB8DFA /* UIPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = B08BB4EE1BD3550900DB8DFA /* UIPopup.xib */; };
 		B0C7D3711BABADB40077A3AC /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C7D36E1BABADB40077A3AC /* DBManager.m */; };
+		B0DFA4A31BD4781400C5C27A /* entries.db in Resources */ = {isa = PBXBuildFile; fileRef = B0DFA4A21BD4781300C5C27A /* entries.db */; };
+		B0DFA4A41BD4781400C5C27A /* entries.db in Resources */ = {isa = PBXBuildFile; fileRef = B0DFA4A21BD4781300C5C27A /* entries.db */; };
 		B0E76BE71BA6B12700F90982 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E76BE61BA6B12700F90982 /* main.m */; };
 		B0E76BEA1BA6B12700F90982 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E76BE91BA6B12700F90982 /* AppDelegate.m */; };
 		B0E76BED1BA6B12700F90982 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E76BEC1BA6B12700F90982 /* ViewController.m */; };
@@ -44,9 +48,12 @@
 
 /* Begin PBXFileReference section */
 		B057F0BF1BABC91400613438 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		B08BB4EC1BD3550900DB8DFA /* UIPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPopup.h; sourceTree = "<group>"; };
+		B08BB4ED1BD3550900DB8DFA /* UIPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPopup.m; sourceTree = "<group>"; };
+		B08BB4EE1BD3550900DB8DFA /* UIPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIPopup.xib; sourceTree = "<group>"; };
 		B0C7D36E1BABADB40077A3AC /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		B0C7D36F1BABADB40077A3AC /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
-		B0D74EB31BD30D0E00F8F85E /* entries.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = entries.db; sourceTree = "<group>"; };
+		B0DFA4A21BD4781300C5C27A /* entries.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = entries.db; sourceTree = "<group>"; };
 		B0E76BE11BA6B12700F90982 /* KernValleySunPhoneDirectory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KernValleySunPhoneDirectory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0E76BE51BA6B12700F90982 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0E76BE61BA6B12700F90982 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -125,9 +132,9 @@
 				DC6D241A1BACAF020035651C /* ImageEntryCell.xib */,
 				B0C7D36E1BABADB40077A3AC /* DBManager.m */,
 				B0C7D36F1BABADB40077A3AC /* DBManager.h */,
-				B0D74EB31BD30D0E00F8F85E /* entries.db */,
 				B0E76C131BA6D37900F90982 /* StandardEntryCell.h */,
 				B0E76C141BA6D37900F90982 /* StandardEntryCell.m */,
+				B0DFA4A21BD4781300C5C27A /* entries.db */,
 				DC6D241C1BACAFBF0035651C /* ImageEntryCell.h */,
 				DC6D241D1BACAFBF0035651C /* ImageEntryCell.m */,
 				B0E76BE81BA6B12700F90982 /* AppDelegate.h */,
@@ -140,6 +147,9 @@
 				B0E76C0F1BA6CFA900F90982 /* ResultsEntries.m */,
 				DC6D240A1BAC88910035651C /* background.png */,
 				B0E76BEE1BA6B12700F90982 /* Main.storyboard */,
+				B08BB4EC1BD3550900DB8DFA /* UIPopup.h */,
+				B08BB4ED1BD3550900DB8DFA /* UIPopup.m */,
+				B08BB4EE1BD3550900DB8DFA /* UIPopup.xib */,
 				DC6D24061BAC7FEC0035651C /* Images-2.xcassets */,
 				DC6D241F1BACB2AE0035651C /* ready */,
 				B0E76BE41BA6B12700F90982 /* Supporting Files */,
@@ -264,6 +274,8 @@
 				DC6D241B1BACAF020035651C /* ImageEntryCell.xib in Resources */,
 				DC6D24161BAC8ECD0035651C /* AppleSDGothicNeo-Medium.otf in Resources */,
 				DC6D24141BAC8ECD0035651C /* AppleSDGothicNeo-Heavy.otf in Resources */,
+				B08BB4F01BD3550900DB8DFA /* UIPopup.xib in Resources */,
+				B0DFA4A31BD4781400C5C27A /* entries.db in Resources */,
 				DC6D240B1BAC88910035651C /* background.png in Resources */,
 				DC6D24131BAC8ECD0035651C /* AppleSDGothicNeo-ExtraBold.otf in Resources */,
 				DC6D24181BAC8ECD0035651C /* AppleSDGothicNeo-Thin.otf in Resources */,
@@ -280,6 +292,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0DFA4A41BD4781400C5C27A /* entries.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +305,7 @@
 			files = (
 				DC6D241E1BACAFBF0035651C /* ImageEntryCell.m in Sources */,
 				B0C7D3711BABADB40077A3AC /* DBManager.m in Sources */,
+				B08BB4EF1BD3550900DB8DFA /* UIPopup.m in Sources */,
 				B0E76C151BA6D37900F90982 /* StandardEntryCell.m in Sources */,
 				B0E76BED1BA6B12700F90982 /* ViewController.m in Sources */,
 				B0E76C0B1BA6C0E400F90982 /* CellGenerator.m in Sources */,

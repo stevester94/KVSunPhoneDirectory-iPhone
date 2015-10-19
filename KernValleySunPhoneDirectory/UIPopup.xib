@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UIPopup">
+            <connections>
+                <outlet property="contactInfoText" destination="ESJ-J9-JQ8" id="Uf5-Dg-Mxv"/>
+                <outlet property="dismissButton" destination="xHd-eB-3lv" id="2rj-gL-tdM"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="center" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" alpha="0.49999999999999961" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zpS-KL-NcG">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="592"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </imageView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESJ-J9-JQ8">
+                    <rect key="frame" x="8" y="193" width="584" height="186"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="186" id="v8l-7h-0jT"/>
+                    </constraints>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xHd-eB-3lv">
+                    <rect key="frame" x="8" y="387" width="584" height="34"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="amb-JG-FZP"/>
+                    </constraints>
+                    <state key="normal" title="Dismiss"/>
+                    <connections>
+                        <action selector="buttonPressed:" destination="-1" eventType="touchDown" id="bVg-3c-ppk"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="ESJ-J9-JQ8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="8cu-Of-Iv0"/>
+                <constraint firstItem="ESJ-J9-JQ8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="193" id="9r1-Yy-h8l"/>
+                <constraint firstItem="xHd-eB-3lv" firstAttribute="top" secondItem="ESJ-J9-JQ8" secondAttribute="bottom" constant="8" symbolic="YES" id="AFj-yf-C8m"/>
+                <constraint firstItem="ESJ-J9-JQ8" firstAttribute="leading" secondItem="xHd-eB-3lv" secondAttribute="leading" id="Ue9-C9-wkT"/>
+                <constraint firstItem="ESJ-J9-JQ8" firstAttribute="centerX" secondItem="zpS-KL-NcG" secondAttribute="centerX" id="Wjl-rO-PSi"/>
+                <constraint firstItem="zpS-KL-NcG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="X83-9a-zAD"/>
+                <constraint firstItem="zpS-KL-NcG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ZrS-ax-gUd"/>
+                <constraint firstAttribute="trailing" secondItem="zpS-KL-NcG" secondAttribute="trailing" id="lNf-Jk-oRu"/>
+                <constraint firstItem="ESJ-J9-JQ8" firstAttribute="trailing" secondItem="xHd-eB-3lv" secondAttribute="trailing" id="sGD-gW-AVu"/>
+                <constraint firstItem="zpS-KL-NcG" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottomMargin" id="tPo-Ld-HxQ"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
