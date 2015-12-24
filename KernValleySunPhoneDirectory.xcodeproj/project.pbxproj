@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B042E61E1C2BCE7600BEEB0B /* entries.db in Resources */ = {isa = PBXBuildFile; fileRef = B042E61D1C2BCE7600BEEB0B /* entries.db */; settings = {ASSET_TAGS = (); }; };
+		B042E61F1C2BCE7600BEEB0B /* entries.db in Resources */ = {isa = PBXBuildFile; fileRef = B042E61D1C2BCE7600BEEB0B /* entries.db */; settings = {ASSET_TAGS = (); }; };
 		B057F0C01BABC91400613438 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B057F0BF1BABC91400613438 /* libsqlite3.0.dylib */; };
 		B08BB4EF1BD3550900DB8DFA /* UIPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = B08BB4ED1BD3550900DB8DFA /* UIPopup.m */; };
 		B08BB4F01BD3550900DB8DFA /* UIPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = B08BB4EE1BD3550900DB8DFA /* UIPopup.xib */; };
@@ -18,8 +20,6 @@
 		B0A91BE91BD495F300047CD2 /* screenshot2.png in Resources */ = {isa = PBXBuildFile; fileRef = B0A91BE21BD495F300047CD2 /* screenshot2.png */; settings = {ASSET_TAGS = (); }; };
 		B0A91BEA1BD495F300047CD2 /* splash2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B0A91BE31BD495F300047CD2 /* splash2.jpg */; settings = {ASSET_TAGS = (); }; };
 		B0C7D3711BABADB40077A3AC /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C7D36E1BABADB40077A3AC /* DBManager.m */; };
-		B0DFA4A31BD4781400C5C27A /* entries.db in Resources */ = {isa = PBXBuildFile; fileRef = B0DFA4A21BD4781300C5C27A /* entries.db */; };
-		B0DFA4A41BD4781400C5C27A /* entries.db in Resources */ = {isa = PBXBuildFile; fileRef = B0DFA4A21BD4781300C5C27A /* entries.db */; };
 		B0E76BE71BA6B12700F90982 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E76BE61BA6B12700F90982 /* main.m */; };
 		B0E76BEA1BA6B12700F90982 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E76BE91BA6B12700F90982 /* AppDelegate.m */; };
 		B0E76BED1BA6B12700F90982 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E76BEC1BA6B12700F90982 /* ViewController.m */; };
@@ -54,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B042E61D1C2BCE7600BEEB0B /* entries.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = entries.db; sourceTree = "<group>"; };
 		B057F0BF1BABC91400613438 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		B08BB4EC1BD3550900DB8DFA /* UIPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPopup.h; sourceTree = "<group>"; };
 		B08BB4ED1BD3550900DB8DFA /* UIPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPopup.m; sourceTree = "<group>"; };
@@ -67,7 +68,6 @@
 		B0A91BE31BD495F300047CD2 /* splash2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = splash2.jpg; sourceTree = "<group>"; };
 		B0C7D36E1BABADB40077A3AC /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		B0C7D36F1BABADB40077A3AC /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
-		B0DFA4A21BD4781300C5C27A /* entries.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = entries.db; sourceTree = "<group>"; };
 		B0E76BE11BA6B12700F90982 /* Sun Directory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sun Directory.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0E76BE51BA6B12700F90982 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0E76BE61BA6B12700F90982 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 				B0C7D36F1BABADB40077A3AC /* DBManager.h */,
 				B0E76C131BA6D37900F90982 /* StandardEntryCell.h */,
 				B0E76C141BA6D37900F90982 /* StandardEntryCell.m */,
-				B0DFA4A21BD4781300C5C27A /* entries.db */,
+				B042E61D1C2BCE7600BEEB0B /* entries.db */,
 				DC6D241C1BACAFBF0035651C /* ImageEntryCell.h */,
 				DC6D241D1BACAFBF0035651C /* ImageEntryCell.m */,
 				B0E76BE81BA6B12700F90982 /* AppDelegate.h */,
@@ -306,7 +306,7 @@
 				DC6D24141BAC8ECD0035651C /* AppleSDGothicNeo-Heavy.otf in Resources */,
 				B0A91BE51BD495F300047CD2 /* featureGraphic.jpg in Resources */,
 				B08BB4F01BD3550900DB8DFA /* UIPopup.xib in Resources */,
-				B0DFA4A31BD4781400C5C27A /* entries.db in Resources */,
+				B042E61E1C2BCE7600BEEB0B /* entries.db in Resources */,
 				B0A91BE91BD495F300047CD2 /* screenshot2.png in Resources */,
 				B0A91BE61BD495F300047CD2 /* hiResIcon.png in Resources */,
 				B0A91BE81BD495F300047CD2 /* screenShot1.png in Resources */,
@@ -329,7 +329,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0DFA4A41BD4781400C5C27A /* entries.db in Resources */,
+				B042E61F1C2BCE7600BEEB0B /* entries.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
