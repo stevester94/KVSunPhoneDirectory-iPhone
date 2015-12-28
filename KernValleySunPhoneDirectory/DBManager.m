@@ -34,7 +34,7 @@
     NSString* baseQuery = @"select * from Entries where displayName like ";
     NSString* query = [baseQuery stringByAppendingString:@"'%"];
     query = [query stringByAppendingString:name];
-    query = [query stringByAppendingString:@"%'"];
+    query = [query stringByAppendingString:@"%' ORDER BY displayName"];
 
     
     sqlite3_stmt* statement = [self executeQuery:query];
@@ -45,7 +45,7 @@
 - (NSMutableArray*) searchByCategory:(NSString *)category {
     NSString* baseQuery = @"SELECT Entries.* from Entries, Categories where ";
     baseQuery = [baseQuery stringByAppendingString:@"Entries.displayName = Categories.displayName and Categories.category = "];
-    NSString* query = [baseQuery stringByAppendingString:@"'"];
+    NSString* query = [baseQuery stringByAppendingString:@"' ORDER BY Entries.displayName"];
     query = [query stringByAppendingString:category];
     query = [query stringByAppendingString:@"'"];
     
@@ -58,7 +58,7 @@
     NSString* baseQuery = @"select category from categoriesList where category like ";
     NSString* query = [baseQuery stringByAppendingString:@"'%"];
     query = [query stringByAppendingString:category];
-    query = [query stringByAppendingString:@"%'"];
+    query = [query stringByAppendingString:@"%' ORDER BY Category"];
     
     
     NSMutableArray* rowDump = [[NSMutableArray alloc] init];
@@ -78,7 +78,7 @@
 }
 
 - (NSMutableArray*) getAllCategories {
-    NSString* baseQuery = @"select category from categorieslist";
+    NSString* baseQuery = @"select category from categorieslist ORDER BY Category";
     NSMutableArray* rowDump = [[NSMutableArray alloc] init];
     sqlite3_stmt* statement = [self executeQuery:baseQuery];
     while(sqlite3_step(statement) == SQLITE_ROW) {
@@ -99,7 +99,7 @@
     NSString* baseQuery = @"select * from Entries where associatedNumbers like ";
     NSString* query = [baseQuery stringByAppendingString:@"'%"];
     query = [query stringByAppendingString:number];
-    query = [query stringByAppendingString:@"%'"];
+    query = [query stringByAppendingString:@"%' ORDER BY hasMultipleLines DESC, displayName"];
     
     sqlite3_stmt* statement = [self executeQuery:query];
     return [self dumpAllEntriesFromStatement:statement];
